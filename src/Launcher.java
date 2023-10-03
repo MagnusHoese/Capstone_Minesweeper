@@ -1,4 +1,9 @@
 public class Launcher {
+
+    public static final String ANSI_RESET = "\u001B[0m";
+
+    public static final String BLACK_BACKGROUND = "\u001B[40m";
+
     public static void main(String[] args) {
         //Block block1 = new Block(0, 0, true);
 
@@ -28,7 +33,7 @@ public class Launcher {
             //          Debug show bomb+blank surrounding
 
             if(blockArray[i].getBombStatus()) {
-                System.out.print(" ¤ ");
+                System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
             } else {
                 Blank current = (Blank)blockArray[i];
                 System.out.print(" "+ current.getSurroundingBombs() + " ");
