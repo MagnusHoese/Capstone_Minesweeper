@@ -39,7 +39,6 @@ public class Board {
 
                 //First load all black spaces
                 blockArray[index] = new Blank(this, i, j, index);
-
                 index++;
             }
         }

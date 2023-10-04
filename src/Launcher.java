@@ -76,4 +76,9 @@ public class Launcher {
 
          -What is the difference between int and Integer, and should we know it
 
+
+         Noter:
+         I initBoard() skal der sættes alle standard variabler så som:
+         antal blocks, antal bomber, osv
+
  */
