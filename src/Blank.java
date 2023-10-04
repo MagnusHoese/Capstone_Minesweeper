@@ -13,45 +13,30 @@ public class Blank extends Block{
         return hasBomb;
     }
 
-    public int getSurroundingBombs() {
-        int numberOfBombs = 0;
-        Board board = getBoard();
+   public int getSurroundingBombs() {
+       int numberOfBombs = 0;
+       Board board = getBoard();
+       int row = this.getIndex() / 8;
+       int col = this.getIndex() % 8;
 
-        /*int currentX = board.getBlockXByID(this.getIndex());
-        int currentY = board.getBlockYByID(this.getIndex());*/
-        if ( this.getIndex() % 8 != 0) {
-            if (board.getBombStatusByID(this.getIndex() - 1))
-                numberOfBombs++;
-        }
-        if (this.getIndex() > 8) {
-            if (board.getBombStatusByID(this.getIndex() - 9))
-                numberOfBombs++;
-            if (board.getBombStatusByID(this.getIndex() - 8))
-                numberOfBombs++;
-            if (board.getBombStatusByID(this.getIndex() - 7))
-                numberOfBombs++;
-        }
-        if (this.getIndex() < 55) {
-            if (board.getBombStatusByID(this.getIndex() + 7))
-                numberOfBombs++;
-            if (board.getBombStatusByID(this.getIndex() + 8))
-                numberOfBombs++;
-            if (board.getBombStatusByID(this.getIndex() + 9))
-                numberOfBombs++;
-        }
-        if (this.getIndex() != 7 &&
-                this.getIndex() != 15 &&
-                this.getIndex() != 23 &&
-                this.getIndex() != 31 &&
-                this.getIndex() != 39 &&
-                this.getIndex() != 47 &&
-                this.getIndex() != 55 &&
-                this.getIndex() != 63 ) {
-            if (board.getBombStatusByID(this.getIndex() + 1))
-                numberOfBombs++;
-        }
+       int[][] directions = {
+               {-1, -1}, {-1, 0}, {-1, 1},
+               {0, -1},           {0, 1},
+               {1, -1}, {1, 0}, {1, 1}
+       };
 
+       for (int[] dir : directions) {
+           int newRow = row + dir[0];
+           int newCol = col + dir[1];
 
-        return numberOfBombs;
-    }
+           if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+               int neighborIndex = newRow * 8 + newCol;
+               if (board.getBombStatusByID(neighborIndex)) {
+                   numberOfBombs++;
+               }
+           }
+       }
+
+       return numberOfBombs;
+   }
 }

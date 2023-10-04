@@ -13,8 +13,16 @@ public class Launcher {
 
         /*Blank current = (Blank)blockArray[1];
         System.out.println(current.getSurroundingBombs());*/
+/*
+        for(int i = 0; i < blockArray.length; i++) {
+            System.out.printf("(" + blockArray[i].getIndex() + ")");
+            if((i+1)%8 == 0) {
+                System.out.println();
+            }
+        }
 
-
+ */
+        System.out.println();
         for(int i = 0; i < blockArray.length; i++){
 
 /*
@@ -30,7 +38,7 @@ public class Launcher {
 */
 
 
-            //          Debug show bomb+blank surrounding
+            //          DEBUG show bomb+blank surrounding
 
             if(blockArray[i].getBombStatus()) {
                 System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
@@ -61,5 +69,11 @@ public class Launcher {
          System.out.print(" "+ current.getSurroundingBombs() + " ");"
          Do i have to do this, or is there a better practice way to call a subclass function
          from the superclass?
+
+         - Should i make generateBoard as a class, as another method or just in the initBoard()? What is most OOP
+
+         - In methods, should i make variables private or are they already protected by their scope
+
+         -What is the difference between int and Integer, and should we know it
 
  */
