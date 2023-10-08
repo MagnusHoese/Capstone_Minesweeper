@@ -56,8 +56,9 @@ public class Board {
         }
         set.toArray(bombIndex);
 
+
         for (int j : bombIndex) {
-            blockArray[j] = new Bomb(this, getBlockXByID(j), getBlockXByID(j), j);
+            blockArray[j] = new Bomb(this, getBlockXByID(j), getBlockYByID(j), j);
         }
 
     }

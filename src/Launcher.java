@@ -9,6 +9,8 @@ public class Launcher {
 
         Board board = new Board();
 
+        Input input = new Input();
+
         Block[] blockArray = board.getBlockArray();
 
         /*Blank current = (Blank)blockArray[1];
