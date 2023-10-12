@@ -5,9 +5,21 @@ import java.util.Set;
 
 public class Board {
 
-    private Block[] blockArray;
+    private int boardWidth;
+    private int boardHeight;
+    private int boardSize;
+    private int boardBombs;
 
-    public Board() {
+    private Block[][] blockArray;
+
+
+    public Board(int boardWidth, int boardHeight, int boardBombs) {
+        this.boardWidth = boardWidth;
+        this.boardHeight = boardHeight;
+
+        this.boardSize = this.boardWidth * this.boardHeight;
+
+        this.boardBombs = Math.min(boardBombs, this.boardSize);
 
         initBoard();
     }

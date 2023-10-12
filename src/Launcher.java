@@ -6,10 +6,13 @@ public class Launcher {
 
     public static final String GREEN_TEXT = "\u001B[32m";
 
-    public static void main(String[] args) {
-        //Block block1 = new Block(0, 0, true);
+    private static int boardWidth = 8;
+    private static int boardHeight = 8;
+    private static int boardBombs = 10;
 
-        Board board = new Board();
+    public static void main(String[] args) {
+
+        Board board = new Board(boardWidth, boardHeight, boardBombs);
 
         Input input = new Input();
 
