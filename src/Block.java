@@ -31,10 +31,6 @@ public abstract class Block {
         return y;
     }
 
-    /*public int getIndex() {
-        return index;
-    }*/
-
     public boolean getBombStatus() {
         return hasBomb;
     }
@@ -57,8 +53,13 @@ public abstract class Block {
         if (o == null || getClass() != o.getClass()) return false;
         Block block = (Block) o;
         return x == block.x &&
-               y == block.y &&
-               index == block.index && hasBomb == block.hasBomb && hasFlag == block.hasFlag && isRevealed == block.isRevealed && surroundingBombs == block.surroundingBombs && Objects.equals(board, block.board);
+                y == block.y &&
+                index == block.index &&
+                hasBomb == block.hasBomb &&
+                hasFlag == block.hasFlag &&
+                isRevealed == block.isRevealed &&
+                surroundingBombs == block.surroundingBombs &&
+                Objects.equals(board, block.board);
     }
 
     @Override
@@ -98,4 +99,6 @@ public abstract class Block {
 
         return surroundingBlankIndex;
     }*/
+
+
 }

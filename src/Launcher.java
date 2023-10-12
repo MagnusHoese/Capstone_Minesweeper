@@ -6,9 +6,9 @@ public class Launcher {
 
     public static final String GREEN_TEXT = "\u001B[32m";
 
-    private static int boardWidth = 1;
+    private static int boardWidth = 8;
     private static int boardHeight = 8;
-    private static int boardBombs = 7;
+    private static int boardBombs = 1;
 
     public static void main(String[] args) {
 
@@ -18,8 +18,7 @@ public class Launcher {
 
         Block[][] blockArray = board.getBlockArray();
 
-        /*Blank current = (Blank)blockArray[1];
-        System.out.println(current.getSurroundingBombs());*/
+        blockArray[1][1].setBlankStatus(true);
 /*
         for(int i = 0; i < blockArray.length; i++) {
             System.out.printf("(" + blockArray[i].getIndex() + ")");
@@ -86,14 +85,27 @@ public class Launcher {
 
         for(int i = 0; i < boardWidth; i++) {
             for(int j = 0; j < boardHeight; j++) {
+                System.out.print(" | ");
+
+                //System.out.println(blockArray[i][j].getBlankStatus());
 
                 if (blockArray[i][j].getBombStatus()) {
                     System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
                 } else {
+                    Blank current = (Blank) blockArray[i][j];
+                    current.checkSurroundingBlanks();
+                }
+                if (!blockArray[i][j].getBlankStatus()) {
+
+                    System.out.print("   ");
+                } else {
                     System.out.print(" " + blockArray[i][j].getSurroundingBombs() + " ");
                 }
+
             }
+            System.out.print(" |");
             System.out.println();
+            System.out.println(" + --- + --- + --- + --- + --- + --- + --- + --- +");
         }
 
 
@@ -103,7 +115,7 @@ public class Launcher {
 
 /*
 
-        - If i want to access e.g. index from block(superclass) in blank(subclass), shouldnt it just work?
+        - If i want to access e.g. x from block(superclass) in blank(subclass), shouldnt it just work?
         or do i have to use a getter or something even better
 
         - On this line:

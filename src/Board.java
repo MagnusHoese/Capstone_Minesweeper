@@ -37,6 +37,20 @@ public class Board {
         return boardBombs;
     }
 
+    public boolean getBombStatus(int x, int y) {
+        return blockArray[x][y].getBombStatus();
+    }
+
+    public boolean getBlankStatus(int x, int y) {
+        return blockArray[x][y].getBlankStatus();
+    }
+
+    public boolean isWithinBounds(int neighborX, int neighborY) {
+        return (neighborX >= 0 && neighborX < boardWidth) &&
+                (neighborY >= 0 && neighborY < boardHeight);
+
+    }
+
     /*public int getBlockXByID(int index) {
         return blockArray[index].getX();
     }
@@ -45,9 +59,7 @@ public class Board {
         return blockArray[index].getY();
     }
 
-    public boolean getBombStatusByID(int index) {
-        return blockArray[index].getBombStatus();
-    }
+
 
     public boolean getBlankStatusByID(int index) {
         return blockArray[index].getBlankStatus();
@@ -75,9 +87,6 @@ public class Board {
 
 
         //Generate the list of indexes where a bomb should be placed
-
-
-
         Random rand = new Random();
 
         Set<Block> set = new LinkedHashSet<Block>();
@@ -95,16 +104,6 @@ public class Board {
 
         for(Block bomb: set)
             blockArray[bomb.getX()][bomb.getY()] = bomb;
-
-
-
-        /*List<Block> bombList = new ArrayList<>(set);
-        System.out.println(bombList.size());
-        for(int i = 0; i < bombList.size(); i++) {
-            blockArray[bombList.get(i).getX()][bombList.get(i).getY()] = bombList.get(i);
-        }*/
-
-
 
 
     }

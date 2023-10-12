@@ -9,38 +9,63 @@ public class Blank extends Block{
 
     }
 
-
-
-
     @Override
     public boolean getBombStatus() {
         return hasBomb;
     }
 
-   /*public int getSurroundingBombs() {
-       int numberOfBombs = 0;
-       Board board = getBoard();
-       int row = this.getIndex() / 8;
-       int col = this.getIndex() % 8;
 
-       int[][] directions = {
-               {-1, -1}, {-1, 0}, {-1, 1},
-               {0, -1},           {0, 1},
-               {1, -1}, {1, 0}, {1, 1}
-       };
+    public int getSurroundingBombs() {
+        int numberOfBombs = 0;
+        int blankX = this.getX();
+        int blankY = this.getY();
+        Board board = getBoard();
 
-       for (int[] dir : directions) {
-           int newRow = row + dir[0];
-           int newCol = col + dir[1];
+        int[][] directions = {
+                { -1, -1 }, { -1, 0 }, { -1, 1 },
+                { 0, -1 },             { 0, 1 },
+                { 1, -1 }, { 1, 0 }, { 1, 1 }
+        };
 
-           if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
-               int neighborIndex = newRow * 8 + newCol;
-               if (board.getBombStatusByID(neighborIndex)) {
-                   numberOfBombs++;
-               }
-           }
-       }
+        for (int[] direction : directions) {
+            int dx = direction[0];
+            int dy = direction[1];
+            int neighborX = blankX + dx;
+            int neighborY = blankY + dy;
 
-       return numberOfBombs;
-   }*/
+            if (board.isWithinBounds(neighborX, neighborY) && board.getBombStatus(neighborX, neighborY)) {
+                numberOfBombs++;
+            }
+        }
+
+        return numberOfBombs;
+    }
+
+    public void checkSurroundingBlanks() {
+        if(!this.getBlankStatus() && this.getSurroundingBombs() == 0) {
+            int blankX = this.getX();
+            int blankY = this.getY();
+            Board board = getBoard();
+
+            int[][] directions = {
+                    { -1, -1 }, { -1, 0 }, { -1, 1 },
+                    { 0, -1 },             { 0, 1 },
+                    { 1, -1 }, { 1, 0 }, { 1, 1 }
+            };
+
+            for (int[] direction : directions) {
+                int dx = direction[0];
+                int dy = direction[1];
+                int neighborX = blankX + dx;
+                int neighborY = blankY + dy;
+
+                if (board.isWithinBounds(neighborX, neighborY) && board.getBlankStatus(neighborX, neighborY)) {
+
+                    this.setBlankStatus(true);
+                    //System.out.println(this.getBlankStatus());
+                }
+            }
+
+        }
+    }
 }
