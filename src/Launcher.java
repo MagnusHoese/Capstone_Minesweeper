@@ -27,9 +27,9 @@ public class Launcher {
 
  */
 
-        blockArray[6].setBlankStatus(true);
+        //blockArray[6].setBlankStatus(true);
         System.out.println(GREEN_TEXT + "  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |" + ANSI_RESET);
-        System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
+        System.out.println("--+ --- + --- + --- + --- + --- + --- + --- + --- +");
         for(int i = 0; i < blockArray.length; i++){
 
 /*
@@ -53,7 +53,7 @@ public class Launcher {
             }
 
             System.out.print(" | ");
-            if ((blockArray[i].getBlankStatus())) {
+            if (!(blockArray[i].getBlankStatus())) {
 
                 if (blockArray[i].getBombStatus()) {
                     System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
@@ -70,7 +70,7 @@ public class Launcher {
             if((i+1)%8 == 0) {
                 System.out.print(" |");
                 System.out.println();
-                System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
+                System.out.println("--+ --- + --- + --- + --- + --- + --- + --- + --- +");
             }
 
 
