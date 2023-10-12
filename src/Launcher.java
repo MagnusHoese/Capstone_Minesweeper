@@ -4,6 +4,8 @@ public class Launcher {
 
     public static final String BLACK_BACKGROUND = "\u001B[40m";
 
+    public static final String GREEN_TEXT = "\u001B[32m";
+
     public static void main(String[] args) {
         //Block block1 = new Block(0, 0, true);
 
@@ -24,7 +26,10 @@ public class Launcher {
         }
 
  */
-        System.out.println();
+
+        blockArray[6].setBlankStatus(true);
+        System.out.println(GREEN_TEXT + "  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |" + ANSI_RESET);
+        System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
         for(int i = 0; i < blockArray.length; i++){
 
 /*
@@ -42,21 +47,36 @@ public class Launcher {
 
             //          DEBUG show bomb+blank surrounding
 
-            if(blockArray[i].getBombStatus()) {
-                System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
+            if((i+1)%8 == 1) {
+                System.out.print(GREEN_TEXT + ((i/8)+1) + ANSI_RESET);
+
+            }
+
+            System.out.print(" | ");
+            if ((blockArray[i].getBlankStatus())) {
+
+                if (blockArray[i].getBombStatus()) {
+                    System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
+                } else {
+                    Blank current = (Blank) blockArray[i];
+                    System.out.print(" " + current.getSurroundingBombs() + " ");
+                }
             } else {
-                Blank current = (Blank)blockArray[i];
-                System.out.print(" "+ current.getSurroundingBombs() + " ");
+                System.out.print("   ");
             }
 
 
 
             if((i+1)%8 == 0) {
+                System.out.print(" |");
                 System.out.println();
+                System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
             }
 
 
         }
+
+        System.out.println(blockArray[6].getSurroundingBlanks());
     }
 }
 

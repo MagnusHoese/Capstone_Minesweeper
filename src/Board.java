@@ -24,6 +24,10 @@ public class Board {
         return blockArray[index].getBombStatus();
     }
 
+    public boolean getBlankStatusByID(int index) {
+        return blockArray[index].getBlankStatus();
+    }
+
     public void initBoard() {
         //Init blockArray
         blockArray = new Block[64];
