@@ -16,7 +16,7 @@ public class Launcher {
 
         Input input = new Input();
 
-        Block[] blockArray = board.getBlockArray();
+        Block[][] blockArray = board.getBlockArray();
 
         /*Blank current = (Blank)blockArray[1];
         System.out.println(current.getSurroundingBombs());*/
@@ -30,10 +30,12 @@ public class Launcher {
 
  */
 
-        blockArray[6].setBlankStatus(true);
-        System.out.println(GREEN_TEXT + "  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |" + ANSI_RESET);
-        System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
-        for(int i = 0; i < blockArray.length; i++){
+
+        //System.out.println(GREEN_TEXT + "  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |" + ANSI_RESET);
+        //System.out.println("--+ --- + --- + --- + --- + --- + --- + --- + --- +");
+
+
+        /*for(int i = 0; i < blockArray.length; i++){
 
 /*
             //          DEBUG show x+y
@@ -49,7 +51,7 @@ public class Launcher {
 
 
             //          DEBUG show bomb+blank surrounding
-
+/*
             if((i+1)%8 == 1) {
                 System.out.print(GREEN_TEXT + ((i/8)+1) + ANSI_RESET);
 
@@ -73,13 +75,28 @@ public class Launcher {
             if((i+1)%8 == 0) {
                 System.out.print(" |");
                 System.out.println();
-                System.out.println("--+-----+-----+-----+-----+-----+-----+-----+-----+");
+                System.out.println("--+ --- + --- + --- + --- + --- + --- + --- + --- +");
             }
 
 
+        }*/
+
+        //System.out.println(blockArray[6].getSurroundingBlanks());
+
+
+        for(int i = 0; i < boardHeight; i++) {
+            for(int j = 0; j < boardWidth; j++) {
+
+                if (blockArray[i][j].getBombStatus()) {
+                    System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
+                } else {
+                    System.out.print(" " + blockArray[i][j].getSurroundingBombs() + " ");
+                }
+            }
+            System.out.println();
         }
 
-        System.out.println(blockArray[6].getSurroundingBlanks());
+
     }
 }
 

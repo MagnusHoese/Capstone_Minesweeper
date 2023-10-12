@@ -24,7 +24,23 @@ public class Board {
         initBoard();
     }
 
-    public int getBlockXByID(int index) {
+    public int getBoardWidth() {
+        return boardWidth;
+    }
+
+    public int getBoardHeight() {
+        return boardHeight;
+    }
+
+    public int getBoardSize() {
+        return boardSize;
+    }
+
+    public int getBoardBombs() {
+        return boardBombs;
+    }
+
+    /*public int getBlockXByID(int index) {
         return blockArray[index].getX();
     }
 
@@ -38,37 +54,35 @@ public class Board {
 
     public boolean getBlankStatusByID(int index) {
         return blockArray[index].getBlankStatus();
-    }
+    }*/
 
     public void initBoard() {
         //Init blockArray
-        blockArray = new Block[64];
+        blockArray = new Block[this.boardWidth][this.boardHeight];
         //Generate board
         generateBoard();
 
     }
 
     public void generateBoard() {
-        int index = 0;
         for(int i = 0; i< 8; i++) {
             for(int j = 0; j < 8; j++) {
 
                 //First load all black spaces
-                blockArray[index] = new Blank(this, i, j, index);
-                index++;
+                blockArray[i][j] = new Blank(this, i, j);
+
             }
         }
 
+
         //Generate the list of indexes where a bomb should be placed
-        int numberOfBombs = 10; //Skal muligvis placeres et andet sted når spillet bliver mere customizable
-        int numberOfBlocks = 64; //Samme som før
 
-        Integer[] bombIndex = new Integer[numberOfBombs]; //We use Integer instead of int, in order to convert the set to the array bombIndex
+        //Integer[][] bombIndex = new Integer[this.boardBombs][this.boardBombs]; //We use Integer instead of int, in order to convert the set to the array bombIndex
         Random rand = new Random();
-        Set<Integer> set = new LinkedHashSet<Integer>(); //To avoid dublicates i use a Linked Hash Set
+        /*Set<Integer><Integer> set = new LinkedHashSet<Integer><Integer>(); //To avoid dublicates i use a Linked Hash Set
 
-        while (set.size() < numberOfBombs) {
-            set.add(rand.nextInt(numberOfBlocks));
+        while (set.size() < this.boardBombs) {
+            set.add(rand.nextInt(this.boardSize));
         }
         set.toArray(bombIndex);
 
@@ -76,10 +90,18 @@ public class Board {
         for (int j : bombIndex) {
             blockArray[j] = new Bomb(this, getBlockXByID(j), getBlockYByID(j), j);
         }
+        */
+        for(int i = 0; i < this.boardBombs; i++) {
+            int randomXIndex = rand.nextInt(this.boardWidth);
+            int randomYIndex = rand.nextInt(this.boardHeight);
+
+            blockArray[randomXIndex][randomYIndex] = new Bomb(this, randomXIndex, randomYIndex);
+        }
 
     }
 
-    public Block[] getBlockArray() {
-        return blockArray;
+    public Block[][] getBlockArray() {
+        return this.blockArray;
     }
+
 }

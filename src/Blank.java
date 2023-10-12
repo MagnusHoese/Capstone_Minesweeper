@@ -2,10 +2,14 @@ public class Blank extends Block{
 
     boolean hasBomb = false;
 
-    public Blank(Board board, int x, int y, int index) {
-        super(board, x, y, index);
+
+
+    public Blank(Board board, int x, int y) {
+        super(board, x, y);
 
     }
+
+
 
 
     @Override
@@ -13,7 +17,7 @@ public class Blank extends Block{
         return hasBomb;
     }
 
-   public int getSurroundingBombs() {
+   /*public int getSurroundingBombs() {
        int numberOfBombs = 0;
        Board board = getBoard();
        int row = this.getIndex() / 8;
@@ -38,5 +42,5 @@ public class Blank extends Block{
        }
 
        return numberOfBombs;
-   }
+   }*/
 }

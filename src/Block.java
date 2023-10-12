@@ -8,13 +8,18 @@ public abstract class Block {
     private boolean hasFlag = false;
     private boolean isRevealed;
     private Board board;
+    private int surroundingBombs = 0;
 
-    public Block(Board board, int x, int y, int index) {
+    public Block(Board board, int x, int y) {
         this.board = board;
         this.x = x;
         this.y = y;
         this.index = index;
         this.isRevealed = false;
+    }
+
+    public int getSurroundingBombs() {
+        return surroundingBombs;
     }
 
     public int getX() {
@@ -25,9 +30,9 @@ public abstract class Block {
         return y;
     }
 
-    public int getIndex() {
+    /*public int getIndex() {
         return index;
-    }
+    }*/
 
     public boolean getBombStatus() {
         return hasBomb;
@@ -45,7 +50,7 @@ public abstract class Block {
         return board;
     }
 
-    public int[] getSurroundingBlanks() {
+    /*public int[] getSurroundingBlanks() {
         int[] surroundingBlankIndex = new int[8];
         Board board = getBoard();
         int row = this.getIndex() / 8;
@@ -76,5 +81,5 @@ public abstract class Block {
         }
 
         return surroundingBlankIndex;
-    }
+    }*/
 }
