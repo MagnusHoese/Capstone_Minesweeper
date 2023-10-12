@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public abstract class Block {
     private int x;
@@ -48,6 +49,21 @@ public abstract class Block {
 
     public Board getBoard() {
         return board;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Block block = (Block) o;
+        return x == block.x &&
+               y == block.y &&
+               index == block.index && hasBomb == block.hasBomb && hasFlag == block.hasFlag && isRevealed == block.isRevealed && surroundingBombs == block.surroundingBombs && Objects.equals(board, block.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, index, hasBomb, hasFlag, isRevealed, board, surroundingBombs);
     }
 
     /*public int[] getSurroundingBlanks() {

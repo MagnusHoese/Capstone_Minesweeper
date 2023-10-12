@@ -6,9 +6,9 @@ public class Launcher {
 
     public static final String GREEN_TEXT = "\u001B[32m";
 
-    private static int boardWidth = 8;
+    private static int boardWidth = 1;
     private static int boardHeight = 8;
-    private static int boardBombs = 10;
+    private static int boardBombs = 7;
 
     public static void main(String[] args) {
 
@@ -84,8 +84,8 @@ public class Launcher {
         //System.out.println(blockArray[6].getSurroundingBlanks());
 
 
-        for(int i = 0; i < boardHeight; i++) {
-            for(int j = 0; j < boardWidth; j++) {
+        for(int i = 0; i < boardWidth; i++) {
+            for(int j = 0; j < boardHeight; j++) {
 
                 if (blockArray[i][j].getBombStatus()) {
                     System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);

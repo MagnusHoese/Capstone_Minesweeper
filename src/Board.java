@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Board {
 
@@ -64,9 +61,11 @@ public class Board {
 
     }
 
+
+
     public void generateBoard() {
-        for(int i = 0; i< 8; i++) {
-            for(int j = 0; j < 8; j++) {
+        for(int i = 0; i < this.boardWidth; i++) {
+            for(int j = 0; j < this.boardHeight; j++) {
 
                 //First load all black spaces
                 blockArray[i][j] = new Blank(this, i, j);
@@ -77,26 +76,36 @@ public class Board {
 
         //Generate the list of indexes where a bomb should be placed
 
-        //Integer[][] bombIndex = new Integer[this.boardBombs][this.boardBombs]; //We use Integer instead of int, in order to convert the set to the array bombIndex
+
+
         Random rand = new Random();
-        /*Set<Integer><Integer> set = new LinkedHashSet<Integer><Integer>(); //To avoid dublicates i use a Linked Hash Set
+
+        Set<Block> set = new LinkedHashSet<Block>();
+
+        int index = 0;
 
         while (set.size() < this.boardBombs) {
-            set.add(rand.nextInt(this.boardSize));
-        }
-        set.toArray(bombIndex);
-
-
-        for (int j : bombIndex) {
-            blockArray[j] = new Bomb(this, getBlockXByID(j), getBlockYByID(j), j);
-        }
-        */
-        for(int i = 0; i < this.boardBombs; i++) {
             int randomXIndex = rand.nextInt(this.boardWidth);
             int randomYIndex = rand.nextInt(this.boardHeight);
 
-            blockArray[randomXIndex][randomYIndex] = new Bomb(this, randomXIndex, randomYIndex);
+            set.add(new Bomb(this, randomXIndex, randomYIndex));
+            index++;
         }
+        System.out.println(index);
+
+        for(Block bomb: set)
+            blockArray[bomb.getX()][bomb.getY()] = bomb;
+
+
+
+        /*List<Block> bombList = new ArrayList<>(set);
+        System.out.println(bombList.size());
+        for(int i = 0; i < bombList.size(); i++) {
+            blockArray[bombList.get(i).getX()][bombList.get(i).getY()] = bombList.get(i);
+        }*/
+
+
+
 
     }
 
