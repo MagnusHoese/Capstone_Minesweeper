@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Launcher {
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -8,7 +10,7 @@ public class Launcher {
 
     private static int boardWidth = 8;
     private static int boardHeight = 8;
-    private static int boardBombs = 1;
+    private static int boardBombs = 20;
 
     public static void main(String[] args) {
 
@@ -18,7 +20,7 @@ public class Launcher {
 
         Block[][] blockArray = board.getBlockArray();
 
-        blockArray[1][1].setBlankStatus(true);
+        //blockArray[1][1].setBlankStatus(true);
 /*
         for(int i = 0; i < blockArray.length; i++) {
             System.out.printf("(" + blockArray[i].getIndex() + ")");
@@ -89,17 +91,21 @@ public class Launcher {
 
                 //System.out.println(blockArray[i][j].getBlankStatus());
 
-                if (blockArray[i][j].getBombStatus()) {
+                /*if (blockArray[i][j].getBombStatus()) {
                     System.out.print(BLACK_BACKGROUND + " ¤ " + ANSI_RESET);
                 } else {
                     Blank current = (Blank) blockArray[i][j];
                     current.checkSurroundingBlanks();
-                }
-                if (!blockArray[i][j].getBlankStatus()) {
+                }*/
+                if (blockArray[i][j].getBlankStatus()) {
 
                     System.out.print("   ");
                 } else {
-                    System.out.print(" " + blockArray[i][j].getSurroundingBombs() + " ");
+                    if (!blockArray[i][j].getBombStatus()) {
+                        Blank current = (Blank) blockArray[i][j];
+                        current.checkSurroundingBlanks();
+                    }
+                    System.out.print( blockArray[i][j].getColor() + " " + blockArray[i][j].getSurroundingBombs() + " " + ANSI_RESET);
                 }
 
             }
@@ -108,7 +114,7 @@ public class Launcher {
             System.out.println(" + --- + --- + --- + --- + --- + --- + --- + --- +");
         }
 
-
+        System.out.println(Color.RED);
     }
 }
 

@@ -10,6 +10,7 @@ public abstract class Block {
     private boolean isRevealed;
     private Board board;
     private int surroundingBombs = 0;
+    private String color;
 
     public Block(Board board, int x, int y) {
         this.board = board;
@@ -18,6 +19,8 @@ public abstract class Block {
         this.index = index;
         this.isRevealed = false;
     }
+
+
 
     public int getSurroundingBombs() {
         return surroundingBombs;
@@ -45,6 +48,14 @@ public abstract class Block {
 
     public Board getBoard() {
         return board;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override
