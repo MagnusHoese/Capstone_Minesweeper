@@ -4,15 +4,15 @@ public class Blank extends Block{
 
     private boolean hasBomb = false;
 
-    private final Color BLACK = new Color(0, 0, 0);
-    private final Color BLUE = new Color(0, 0, 255);
-    private final Color GREEN = new Color(0, 200, 0);
-    private final Color RED = new Color(255, 0, 0);
-    private final Color DARKBLUE = new Color(0, 0, 155);
-    private final Color BORDEAUX = new Color(155, 0, 0);
-    private final Color CYAN = new Color(0, 200, 200);
-    private final Color PURPLE = new Color(200, 0, 200);
-    private final Color GREY =  new Color(155, 155, 155);
+    private final Color BLACK = new Color(0, 0, 0); //0
+    private final Color BLUE = new Color(0, 0, 255); //1
+    private final Color GREEN = new Color(0, 200, 0); //2
+    private final Color RED = new Color(255, 0, 0); //3
+    private final Color DARKBLUE = new Color(0, 0, 155); //4
+    private final Color BORDEAUX = new Color(155, 0, 0); //5
+    private final Color CYAN = new Color(0, 200, 200); //6
+    private final Color PURPLE = new Color(200, 0, 200); // 7
+    private final Color GREY =  new Color(155, 155, 155); //8
 
 
 

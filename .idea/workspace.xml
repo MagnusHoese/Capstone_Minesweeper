@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +82,9 @@
       <workItem from="1696423030621" duration="6996000" />
       <workItem from="1696494763759" duration="13957000" />
       <workItem from="1697125834563" duration="2559000" />
-      <workItem from="1698225689212" duration="6176000" />
+      <workItem from="1698225689212" duration="10039000" />
+      <workItem from="1699352409274" duration="756000" />
+      <workItem from="1699607187511" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

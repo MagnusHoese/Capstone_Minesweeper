@@ -10,7 +10,7 @@ public class Launcher {
 
     private static int boardWidth = 8;
     private static int boardHeight = 8;
-    private static int boardBombs = 20;
+    private static int boardBombs = 2;
 
     public static void main(String[] args) {
 
@@ -20,7 +20,7 @@ public class Launcher {
 
         Block[][] blockArray = board.getBlockArray();
 
-        //blockArray[1][1].setBlankStatus(true);
+        blockArray[1][1].setBlankStatus(true);
 /*
         for(int i = 0; i < blockArray.length; i++) {
             System.out.printf("(" + blockArray[i].getIndex() + ")");
@@ -97,7 +97,7 @@ public class Launcher {
                     Blank current = (Blank) blockArray[i][j];
                     current.checkSurroundingBlanks();
                 }*/
-                if (blockArray[i][j].getBlankStatus()) {
+                if (!blockArray[i][j].getBlankStatus()) {
 
                     System.out.print("   ");
                 } else {
@@ -114,7 +114,6 @@ public class Launcher {
             System.out.println(" + --- + --- + --- + --- + --- + --- + --- + --- +");
         }
 
-        System.out.println(Color.RED);
     }
 }
 
@@ -140,5 +139,7 @@ public class Launcher {
          Noter:
          I initBoard() skal der sættes alle standard variabler så som:
          antal blocks, antal bomber, osv
+
+         modern view controller
 
  */
