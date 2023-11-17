@@ -95,9 +95,9 @@ public class Launcher {
                     Blank current = (Blank) blockArray[i][j];
                     current.checkSurroundingBlanks();
                 }
-                if (!blockArray[i][j].getBlankStatus()) {
+                if (!blockArray[i][j].getBlankStatus() || blockArray[i][j].getBombStatus()) {
 
-                    System.out.print("   ");
+                    System.out.print(" #  ");
                 } else {
                     System.out.print(" " + blockArray[i][j].getSurroundingBombs() + " ");
                 }
