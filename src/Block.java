@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Block {
@@ -15,7 +14,6 @@ public abstract class Block {
         this.board = board;
         this.x = x;
         this.y = y;
-        this.index = index;
         this.isRevealed = false;
     }
 
@@ -35,7 +33,7 @@ public abstract class Block {
         return hasBomb;
     }
 
-    public boolean getBlankStatus() {
+    public boolean isBlankRevealed() {
         return isRevealed;
     }
 
@@ -67,38 +65,6 @@ public abstract class Block {
         return Objects.hash(x, y, index, hasBomb, hasFlag, isRevealed, board, surroundingBombs);
     }
 
-    /*public int[] getSurroundingBlanks() {
-        int[] surroundingBlankIndex = new int[8];
-        Board board = getBoard();
-        int row = this.getIndex() / 8;
-        int col = this.getIndex() % 8;
-
-        System.out.println(row);
-
-        int[][] directions = {
-                {-1, -1}, {-1, 0}, {-1, 1},
-                {0, -1},           {0, 1},
-                {1, -1}, {1, 0}, {1, 1}
-        };
-        System.out.println(Arrays.toString(directions));
-
-        int index = 0;
-        for (int[] dir : directions) {
-
-            int newRow = row + dir[0];
-            int newCol = col + dir[1];
-
-            if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
-                int neighborIndex = newRow * 8 + newCol;
-                if (board.getBlankStatusByID(neighborIndex)) {
-                    surroundingBlankIndex[index] = neighborIndex;
-                }
-            }
-            index++;
-        }
-
-        return surroundingBlankIndex;
-    }*/
 
 
 }

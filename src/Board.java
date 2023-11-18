@@ -37,12 +37,24 @@ public class Board {
         return boardBombs;
     }
 
+    public void setBlockArray(Block[][] blockArray) {
+        this.blockArray = blockArray;
+    }
+
+    public Block[][] getBlockArray() {
+        return blockArray;
+    }
+
     public boolean getBombStatus(int x, int y) {
         return blockArray[x][y].getBombStatus();
     }
 
-    public boolean getBlankStatus(int x, int y) {
-        return blockArray[x][y].getBlankStatus();
+    public boolean isBlankRevealed(int x, int y) {
+        return blockArray[x][y].isBlankRevealed();
+    }
+
+    public Block getBlockObject(int x, int y) {
+        return blockArray[x][y];
     }
 
     public boolean isWithinBounds(int neighborX, int neighborY) {
@@ -51,19 +63,6 @@ public class Board {
 
     }
 
-    /*public int getBlockXByID(int index) {
-        return blockArray[index].getX();
-    }
-
-    public int getBlockYByID(int index) {
-        return blockArray[index].getY();
-    }
-
-
-
-    public boolean getBlankStatusByID(int index) {
-        return blockArray[index].getBlankStatus();
-    }*/
 
     public void initBoard() {
         //Init blockArray
@@ -108,8 +107,6 @@ public class Board {
 
     }
 
-    public Block[][] getBlockArray() {
-        return this.blockArray;
-    }
+
 
 }
