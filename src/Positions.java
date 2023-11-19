@@ -1,3 +1,5 @@
+import gameObjects.Board;
+
 public class Positions {
 
     static Board board;

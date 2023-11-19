@@ -1,3 +1,5 @@
+package gameObjects;
+
 import java.util.Objects;
 
 public abstract class Block {

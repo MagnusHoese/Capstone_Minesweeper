@@ -1,3 +1,5 @@
+package gameObjects;
+
 import java.awt.*;
 
 public class Blank extends Block{

@@ -1,3 +1,5 @@
+package gameObjects;
+
 public class Bomb extends Block{
 
     boolean hasBomb = true;

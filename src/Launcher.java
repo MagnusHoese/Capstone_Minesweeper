@@ -1,3 +1,5 @@
+import gameLogic.GameController;
+import gameObjects.Board;
 import input.ConsoleInput;
 
 public class Launcher {
@@ -9,6 +11,8 @@ public class Launcher {
     public static void main(String[] args) {
 
         Board board = new Board(boardWidth, boardHeight, boardBombs);
+
+
 
         ConsoleInput input = new ConsoleInput();
 
@@ -31,7 +35,7 @@ public class Launcher {
         or do i have to use a getter or something even better
 
         - On this line:
-        "Blank current = (Blank)blockArray[i];
+        "gameLogic.Blank current = (gameLogic.Blank)blockArray[i];
          System.out.print(" "+ current.getSurroundingBombs() + " ");"
          Do i have to do this, or is there a better practice way to call a subclass function
          from the superclass?

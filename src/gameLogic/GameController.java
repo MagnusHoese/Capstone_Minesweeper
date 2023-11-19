@@ -1,3 +1,8 @@
+package gameLogic;
+
+import gameObjects.Blank;
+import gameObjects.Block;
+import gameObjects.Board;
 import input.ConsoleInput;
 
 public class GameController {
@@ -113,7 +118,6 @@ public class GameController {
             }
         }
 
-        // Once no more blanks are revealed, update the board
         board.setBlockArray(blockArray);
     }
 
