@@ -2,10 +2,15 @@ public class Bomb extends Block{
 
     boolean hasBomb = true;
 
-    public Bomb(Board board, int x, int y, int index) {
-        super(board, x, y, index);
+
+    @Override
+    public String getColor() {
+        return "\u001B[40m";
     }
 
+    public Bomb(Board board, int x, int y) {
+        super(board, x, y);
+    }
 
     @Override
     public boolean getBombStatus() {
