@@ -26,8 +26,15 @@ public class Blank extends Block{
         return hasBomb;
     }
 
+    @Override
+    public boolean hasFlag() {
+        return super.hasFlag();
+    }
 
-
+    @Override
+    public void setFlag(boolean hasFlag) {
+        super.setFlag(hasFlag);
+    }
 
     public int getSurroundingBombs() {
         int numberOfBombs = 0;

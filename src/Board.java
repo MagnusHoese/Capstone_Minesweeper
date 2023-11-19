@@ -57,9 +57,9 @@ public class Board {
         return blockArray[x][y];
     }
 
-    public boolean isWithinBounds(int neighborX, int neighborY) {
-        return (neighborX >= 0 && neighborX < boardWidth) &&
-                (neighborY >= 0 && neighborY < boardHeight);
+    public boolean isWithinBounds(int x, int y) {
+        return (x >= 0 && x < boardWidth) &&
+                (y >= 0 && y < boardHeight);
 
     }
 

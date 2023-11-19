@@ -1,5 +1,4 @@
 import input.ConsoleInput;
-import input.InputController;
 
 public class Launcher {
 
