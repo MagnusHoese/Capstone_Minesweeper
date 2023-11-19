@@ -1,24 +1,26 @@
+import input.ConsoleInput;
+import input.InputController;
+
 public class Launcher {
 
     private static int boardWidth = 8;
-    private static int boardHeight = 2;
-    private static int boardBombs = 0;
+    private static int boardHeight = 8;
+    private static int boardBombs = 10;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         Board board = new Board(boardWidth, boardHeight, boardBombs);
 
-        Input input = new Input();
+        ConsoleInput input = new ConsoleInput();
 
-        GameController gameController = new GameController(board);
+        GameController gameController = new GameController(board, input);
 
         int round = 0;
-        //while (true) {
+        while (true) {
             gameController.gameRound(round);
             round++;
-            Thread.sleep(5000);
 
-        //}
+        }
 
     }
 }

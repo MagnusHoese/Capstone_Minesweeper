@@ -1,3 +1,5 @@
+import input.ConsoleInput;
+
 public class GameController {
 
     public static final String ANSI_RESET = "\u001B[0m";
@@ -5,22 +7,30 @@ public class GameController {
     public static final String BLACK_BACKGROUND = "\u001B[40m";
 
     public static final String GREEN_BACKGROUND = "\u001B[42m";
+    public static final String RED_BACKGROUND = "\u001B[41m";
 
     private Board board;
+
+    private ConsoleInput input;
     private int boardHeight;
     private int boardWidth;
+    private Block[][] blockArray;
 
     public int newX; // TODO: SKAL LAVES OM
     public int newY; // TODO: SKAL LAVES OM
 
-    public GameController(Board board) {
+    public GameController(Board board, ConsoleInput input) {
         this.board = board;
+        this.input = input;
         this.boardHeight = board.getBoardHeight();
         this.boardWidth = board.getBoardWidth();
+        this.blockArray = board.getBlockArray();
     }
     public void drawBoard(boolean areBombsRevealed, int newX, int newY) {
 
-        Block[][] blockArray = board.getBlockArray();
+
+        System.out.printf("Bombs in total: %d | Flags set: %d | Bombs left: %d %n", board.getBoardBombs(), board.getFlagCount(blockArray), board.getBoardBombs() - board.getFlagCount(blockArray));
+
         System.out.println("boardWidth: " + boardWidth + ", boardHeight: " + boardHeight);
 
 
@@ -37,17 +47,24 @@ public class GameController {
                 if (!blockArray[x][y].isBlankRevealed() || blockArray[x][y].getBombStatus()) {
                     if (blockArray[x][y].getBombStatus()) {
                         System.out.print(BLACK_BACKGROUND + " # " + ANSI_RESET);
+                        //System.out.print(" # ");
                     } else {
-                        System.out.print(" # ");
+                        //System.out.print(" # ");
+                        System.out.print(BLACK_BACKGROUND + " # " + ANSI_RESET);
                     }
-
+                } else if (blockArray[x][y].hasFlag()) {
+                    System.out.print(BLACK_BACKGROUND + " ~ " + ANSI_RESET);
                 } else {
                     if(x == newX && y == newY) {
                         System.out.print(GREEN_BACKGROUND + " " + blockArray[x][y].getSurroundingBombs() + " "+ ANSI_RESET);
-                    } else
-                        System.out.print(" " + blockArray[x][y].getSurroundingBombs() + " ");
+                    } else {
+                        if (blockArray[x][y].getSurroundingBombs() == 0) {
+                            System.out.print("   ");
+                        } else {
+                            System.out.print(" " + blockArray[x][y].getSurroundingBombs() + " ");
+                        }
+                    }
                 }
-                //System.out.print("i(boardWidth): " + i + ", j(boardHeight): " + j);
             }
 
             System.out.print(" |");
@@ -114,19 +131,23 @@ public class GameController {
     }
 
     private Block[][] getInput() {
-        Block[][] blockArray = board.getBlockArray();
 
-        int inputX = 4;
-        int inputY = 1;
 
-        newX += inputX;
+        blockArray[1][1].setFlag(true);
+
+        int inputX = input.getInputString() - 1;
+        int inputY = input.getInputString() - 1;
+
+        newX = inputX;
         newY = inputY;
+
+
 
 
 
         blockArray[newX][newY].setBlankStatus(true); //Simulerer at man har valgt en celle
 
-        System.out.printf("Input x was %d, and input y was %d %n", newX, newY);
+        System.out.printf("input.Input x was %d, and input y was %d %n", newX, newY);
 
 
 

@@ -48,6 +48,14 @@ public abstract class Block {
         return board;
     }
 
+    public boolean hasFlag() {
+        return hasFlag;
+    }
+
+    public void setFlag(boolean hasFlag) {
+        this.hasFlag = hasFlag;
+    }
+
     public String getColor() {
         return color;
     }

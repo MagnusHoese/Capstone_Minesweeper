@@ -63,6 +63,17 @@ public class Board {
 
     }
 
+    public int getFlagCount(Block[][] blockArray) {
+        int flagAmount = 0;
+        for(int y = 0; y < boardHeight; y++) {
+            for(int x = 0; x < boardWidth; x++) {
+                if (blockArray[x][y].hasFlag())
+                    flagAmount++;
+            }
+        }
+        return flagAmount;
+    }
+
 
     public void initBoard() {
         //Init blockArray
@@ -90,16 +101,15 @@ public class Board {
 
         Set<Block> set = new LinkedHashSet<Block>();
 
-        int index = 0;
+
 
         while (set.size() < this.boardBombs) {
             int randomXIndex = rand.nextInt(this.boardWidth);
             int randomYIndex = rand.nextInt(this.boardHeight);
 
             set.add(new Bomb(this, randomXIndex, randomYIndex));
-            index++;
+
         }
-        System.out.println(index);
 
         for(Block bomb: set)
             blockArray[bomb.getX()][bomb.getY()] = bomb;
