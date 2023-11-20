@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="note update">
+    <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="GameController added + checkSurroundingBlanks done + minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/ConsoleInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/InputController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +48,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -56,7 +61,20 @@
       <recent name="C:\Users\magnu\Capstone_Minesweeper\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Launcher">
+    <configuration name="ConsoleInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="input.ConsoleInput" />
+      <module name="Capstone_Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher" />
       <module name="Capstone_Minesweeper" />
@@ -67,6 +85,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
+        <item itemvalue="Application.ConsoleInput" />
       </list>
     </recent_temporary>
   </component>
@@ -81,10 +100,13 @@
       <workItem from="1696353805689" duration="3973000" />
       <workItem from="1696423030621" duration="6996000" />
       <workItem from="1696494763759" duration="13957000" />
-      <workItem from="1697125834563" duration="2559000" />
-      <workItem from="1698225689212" duration="10039000" />
-      <workItem from="1699352409274" duration="756000" />
-      <workItem from="1699607187511" duration="107000" />
+      <workItem from="1697125834563" duration="4324000" />
+      <workItem from="1700236814841" duration="3008000" />
+      <workItem from="1700243394877" duration="492000" />
+      <workItem from="1700307114732" duration="599000" />
+      <workItem from="1700309613900" duration="24051000" />
+      <workItem from="1700354410176" duration="2036000" />
+      <workItem from="1700391304006" duration="4607000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
@@ -118,18 +140,55 @@
       <option name="project" value="LOCAL" />
       <updated>1696779946129</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="getSurroundingBombs() done + &#10;checkSurroundingBlanks() næsten done">
+      <option name="closed" value="true" />
+      <created>1697128813631</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697128813631</updated>
+    </task>
+    <task id="LOCAL-00006" summary="getSurroundingBombs() done + &#10;checkSurroundingBlanks() næsten done">
+      <option name="closed" value="true" />
+      <created>1700238186592</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700238186592</updated>
+    </task>
+    <task id="LOCAL-00007" summary="GameController added + checkSurroundingBlanks done + minor fixes">
+      <option name="closed" value="true" />
+      <created>1700350995406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700350995407</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
     <MESSAGE value="bomb detection compiling fix" />
     <MESSAGE value="bomb dectection done + random bomb generation w/o duplicates" />
     <MESSAGE value="+ input class" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ input class" />
+    <MESSAGE value="getSurroundingBombs() done + &#10;checkSurroundingBlanks() næsten done" />
+    <MESSAGE value="GameController added + checkSurroundingBlanks done + minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="GameController added + checkSurroundingBlanks done + minor fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

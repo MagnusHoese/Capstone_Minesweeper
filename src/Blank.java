@@ -26,8 +26,15 @@ public class Blank extends Block{
         return hasBomb;
     }
 
+    @Override
+    public boolean hasFlag() {
+        return super.hasFlag();
+    }
 
-
+    @Override
+    public void setFlag(boolean hasFlag) {
+        super.setFlag(hasFlag);
+    }
 
     public int getSurroundingBombs() {
         int numberOfBombs = 0;
@@ -87,7 +94,7 @@ public class Blank extends Block{
     }
 
     public void checkSurroundingBlanks() {
-        if(!this.getBlankStatus() && this.getSurroundingBombs() == 0) {
+        if(!this.isBlankRevealed()) {
             int blankX = this.getX();
             int blankY = this.getY();
             Board board = getBoard();
@@ -104,13 +111,14 @@ public class Blank extends Block{
                 int neighborX = blankX + dx;
                 int neighborY = blankY + dy;
 
-                if (board.isWithinBounds(neighborX, neighborY) && board.getBlankStatus(neighborX, neighborY)) {
+                if (board.isWithinBounds(neighborX, neighborY) &&
+                        board.isBlankRevealed(neighborX, neighborY) &&
+                        board.getBlockObject(neighborX,neighborY).getSurroundingBombs() == 0) {
 
                     this.setBlankStatus(true);
-                    //System.out.println(this.getBlankStatus());
+
                 }
             }
-
         }
     }
 }
