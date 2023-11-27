@@ -24,7 +24,7 @@ public class Blank extends Block{
     }
 
     @Override
-    public boolean getBombStatus() {
+    public boolean isBomb() {
         return hasBomb;
     }
 
@@ -117,7 +117,7 @@ public class Blank extends Block{
                         board.isBlankRevealed(neighborX, neighborY) &&
                         board.getBlockObject(neighborX,neighborY).getSurroundingBombs() == 0) {
 
-                    this.setBlankStatus(true);
+                    this.setIsRevealed(true);
 
                 }
             }

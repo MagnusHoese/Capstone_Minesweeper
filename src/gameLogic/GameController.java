@@ -40,10 +40,10 @@ public class GameController {
 
                 System.out.print(" | ");
 
-                if (!blockArray[x][y].isBlankRevealed() || blockArray[x][y].getBombStatus()) {
+                if (!blockArray[x][y].isBlankRevealed() || blockArray[x][y].isBomb()) {
                     if (blockArray[x][y].hasFlag()) {
                         System.out.print(RED_BACKGROUND + " ~ " + ANSI_RESET);
-                    } else if (blockArray[x][y].getBombStatus()) {
+                    } else if (blockArray[x][y].isBomb()) {
                         System.out.print(BLACK_BACKGROUND + " # " + ANSI_RESET);
                         //System.out.print(" # ");
                     } else {
@@ -91,7 +91,7 @@ public class GameController {
 
     }
 
-    private void updateBoard(Block[][] blockArray) {
+    public void updateBoard(Block[][] blockArray) {
         boolean blanksRevealed = true;
 
 
@@ -102,7 +102,7 @@ public class GameController {
 
             for (int y = 0; y < boardHeight; y++) {
                 for (int x = 0; x < boardWidth; x++) {
-                    if (!blockArray[x][y].getBombStatus() && !blockArray[x][y].isBlankRevealed()) {
+                    if (!blockArray[x][y].isBomb() && !blockArray[x][y].isBlankRevealed()) {
 
                         Blank current = (Blank) blockArray[x][y];
                         current.checkSurroundingBlanks();
@@ -141,7 +141,7 @@ public class GameController {
         if (board.isWithinBounds(x, y)) {
             switch (status) {
                 case "r":
-                    blockArray[x][y].setBlankStatus(true);
+                    blockArray[x][y].setIsRevealed(true);
                     break;
                 case "f":
                     blockArray[x][y].setFlag(true);

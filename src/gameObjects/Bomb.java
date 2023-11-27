@@ -15,7 +15,7 @@ public class Bomb extends Block{
     }
 
     @Override
-    public boolean getBombStatus() {
+    public boolean isBomb() {
         return hasBomb;
     }
 }

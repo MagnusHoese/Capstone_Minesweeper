@@ -48,7 +48,7 @@ public class Board {
     }
 
     public boolean getBombStatus(int x, int y) {
-        return blockArray[x][y].getBombStatus();
+        return blockArray[x][y].isBomb();
     }
 
     public boolean isBlankRevealed(int x, int y) {

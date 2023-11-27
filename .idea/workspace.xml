@@ -5,32 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/blank0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/bomb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/minesweeper_spritesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameLogic/UpdateBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/MainWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/PictureManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/TestMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/drawBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderers/BoardRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderers/PictureBoardRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Blank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameLogic/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Positions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Positions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameLogic/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameLogic/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Blank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/PictureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PictureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/drawBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DrawBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -58,25 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "swing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;swing&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\magnu\Capstone_Minesweeper\src" />
@@ -142,6 +131,9 @@
       <workItem from="1700309613900" duration="24051000" />
       <workItem from="1700354410176" duration="2036000" />
       <workItem from="1700391304006" duration="4607000" />
+      <workItem from="1700560135684" duration="1044000" />
+      <workItem from="1700839449537" duration="4210000" />
+      <workItem from="1700845210853" duration="1975000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

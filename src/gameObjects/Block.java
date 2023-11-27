@@ -6,7 +6,7 @@ public abstract class Block {
     private int x;
     private int y;
     private int index;
-    private boolean hasBomb;
+    private boolean isBomb;
     private boolean hasFlag = false;
     private boolean isRevealed;
     private Board board;
@@ -34,15 +34,15 @@ public abstract class Block {
         return y;
     }
 
-    public boolean getBombStatus() {
-        return hasBomb;
+    public boolean isBomb() {
+        return isBomb;
     }
 
     public boolean isBlankRevealed() {
         return isRevealed;
     }
 
-    public void setBlankStatus(boolean revealed) {
+    public void setIsRevealed(boolean revealed) {
         isRevealed = revealed;
     }
 
@@ -74,7 +74,7 @@ public abstract class Block {
         return x == block.x &&
                 y == block.y &&
                 index == block.index &&
-                hasBomb == block.hasBomb &&
+                isBomb == block.isBomb &&
                 hasFlag == block.hasFlag &&
                 isRevealed == block.isRevealed &&
                 surroundingBombs == block.surroundingBombs &&
@@ -83,7 +83,7 @@ public abstract class Block {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, index, hasBomb, hasFlag, isRevealed, board, surroundingBombs);
+        return Objects.hash(x, y, index, isBomb, hasFlag, isRevealed, board, surroundingBombs);
     }
 
 

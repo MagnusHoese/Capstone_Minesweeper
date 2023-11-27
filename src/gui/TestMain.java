@@ -17,7 +17,7 @@ public class TestMain {
         Board board = new Board(8, 8, 10);
 
         PictureManager pictureManager = new PictureManager(board);
-        Input input = new Input(pictureManager);
+        Input input = new Input(pictureManager, board);
 
         // For example, you might add the clickablePictures JLabels to a JFrame
         JFrame frame = new JFrame("Minesweeper");
