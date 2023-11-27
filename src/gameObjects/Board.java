@@ -9,7 +9,7 @@ public class Board {
     private int boardSize;
     private int boardBombs;
 
-    private Block[][] blockArray;
+    private List<List<Block>> blockList;
 
 
     public Board(int boardWidth, int boardHeight, int boardBombs) {
@@ -20,7 +20,18 @@ public class Board {
 
         this.boardBombs = Math.min(boardBombs, this.boardSize);
 
-        initBoard();
+        this.blockList = new ArrayList<>();
+        for (int x = 0; x < boardWidth; x++) {
+            List<Block> row = new ArrayList<>();
+            for (int y = 0; y < boardHeight; y++) {
+                // First load all black spaces
+                row.add(new Blank(this, x, y));
+            }
+            this.blockList.add(row);
+        }
+        //Generate board
+        generateBoard();
+
     }
 
     public int getBoardWidth() {
@@ -39,24 +50,24 @@ public class Board {
         return boardBombs;
     }
 
-    public void setBlockArray(Block[][] blockArray) {
-        this.blockArray = blockArray;
+    public void setBlockList(List<List<Block>> blockList) {
+        this.blockList = blockList;
     }
 
-    public Block[][] getBlockArray() {
-        return blockArray;
+    public List<List<Block>> getBlockList() {
+        return blockList;
     }
 
     public boolean getBombStatus(int x, int y) {
-        return blockArray[x][y].isBomb();
+        return blockList.get(x).get(y).isBomb();
     }
 
     public boolean isBlankRevealed(int x, int y) {
-        return blockArray[x][y].isBlankRevealed();
+        return blockList.get(x).get(y).isBlankRevealed();
     }
 
     public Block getBlockObject(int x, int y) {
-        return blockArray[x][y];
+        return blockList.get(x).get(y);
     }
 
     public boolean isWithinBounds(int x, int y) {
@@ -65,60 +76,46 @@ public class Board {
 
     }
 
-    public int getFlagCount(Block[][] blockArray) {
+    public int getFlagCount() { //TODO Fjern inputparameter
         int flagAmount = 0;
-        for(int y = 0; y < boardHeight; y++) {
-            for(int x = 0; x < boardWidth; x++) {
-                if (blockArray[x][y].hasFlag())
+
+        for(List<Block> row : this.blockList) {
+            for(Block block : row) {
+                if(block.hasFlag())
                     flagAmount++;
             }
         }
+
         return flagAmount;
     }
 
 
     public void initBoard() {
-        //Init blockArray
-        blockArray = new Block[this.boardWidth][this.boardHeight];
-        //Generate board
-        generateBoard();
+
 
     }
 
-
-
     public void generateBoard() {
-        for(int i = 0; i < this.boardWidth; i++) {
-            for(int j = 0; j < this.boardHeight; j++) {
-
-                //First load all black spaces
-                blockArray[i][j] = new Blank(this, i, j);
-
-            }
-        }
 
 
         //Generate the list of indexes where a bomb should be placed
         Random rand = new Random();
 
-        Set<Block> set = new LinkedHashSet<Block>();
+        Set<Block> bombSet = new LinkedHashSet<>();
 
 
 
-        while (set.size() < this.boardBombs) {
+        while (bombSet.size() < this.boardBombs) {
             int randomXIndex = rand.nextInt(this.boardWidth);
             int randomYIndex = rand.nextInt(this.boardHeight);
 
-            set.add(new Bomb(this, randomXIndex, randomYIndex));
+            bombSet.add(new Bomb(this, randomXIndex, randomYIndex));
 
         }
 
-        for(Block bomb: set)
-            blockArray[bomb.getX()][bomb.getY()] = bomb;
+        for(Block bomb: bombSet)
+            blockList.get(bomb.getX()).set(bomb.getY(), bomb);
 
 
     }
-
-
-
 }

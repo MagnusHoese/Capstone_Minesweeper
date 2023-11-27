@@ -1,6 +1,7 @@
 import gameLogic.GameController;
 import gameObjects.Board;
 import input.ConsoleInput;
+import renderers.TextBoardRenderer;
 
 public class Launcher {
 
@@ -12,18 +13,11 @@ public class Launcher {
 
         Board board = new Board(boardWidth, boardHeight, boardBombs);
 
-
-
         ConsoleInput input = new ConsoleInput();
+        TextBoardRenderer renderer = new TextBoardRenderer(board);
+        GameController gameController = new GameController(board, renderer, input);
 
-        GameController gameController = new GameController(board, input);
-
-        int round = 0;
-        while (true) {
-            gameController.gameRound(round);
-            round++;
-
-        }
+        gameController.startGame();
 
     }
 }

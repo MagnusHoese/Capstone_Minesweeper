@@ -19,7 +19,7 @@ public class Input {
     public Input(PictureManager pictureManager, Board board) {
         this.pictureManager = pictureManager;
         this.board = board;
-        this.blockArray = board.getBlockArray();
+        //this.blockArray = board.getBlockArray();
 
         // Access the list of clickable pictures
         for (JLabel label : pictureManager.getClickablePictures()) {
@@ -29,19 +29,27 @@ public class Input {
     }
 
     private class CustomMouseListener extends MouseAdapter {
+
         @Override
         public void mouseClicked(MouseEvent e) {
-            // Handle click event here
-            JLabel source = (JLabel) e.getSource();
-            String imageName = getImageNameFromLabel(source);
 
-            int x = source.getX() / 16;
-            int y = source.getY() / 16;
-            System.out.println("x: " + x + ", y: " + y);
-            System.out.println(source);
-            pictureManager.changeIcon(source, x, y);
-            //source.setIcon(pictureManager.createImageIcon("/assets/blank1.png"));
-            //JOptionPane.showMessageDialog(null, "Picture clicked: " + imageName);
+            if (e.getButton() == MouseEvent.BUTTON1) {
+                JLabel source = (JLabel) e.getSource();
+                String imageName = getImageNameFromLabel(source);
+
+                int x = source.getX() / 16;
+                int y = source.getY() / 16;
+                System.out.println("x: " + x + ", y: " + y);
+                System.out.println(source);
+                pictureManager.update(source, x, y);
+                //source.setIcon(pictureManager.createImageIcon("/assets/blank1.png"));
+                //JOptionPane.showMessageDialog(null, "Picture clicked: " + imageName);
+
+            } else if (e.getButton() == MouseEvent.BUTTON3) {
+
+            }
+
+
         }
 
         private String getImageNameFromLabel(JLabel label) {

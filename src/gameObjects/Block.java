@@ -20,8 +20,6 @@ public abstract class Block {
         this.isRevealed = false;
     }
 
-
-
     public int getSurroundingBombs() {
         return surroundingBombs;
     }

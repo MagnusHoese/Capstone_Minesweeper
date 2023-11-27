@@ -35,8 +35,8 @@ public class PictureManager {
     public PictureManager(Board board) {
 
         this.board = board;
-        this.blockArray = board.getBlockArray();
-        this.gameController = new GameController(board, new ConsoleInput());//TODO Lorte løsning
+        //this.blockArray = board.getBlockArray();
+        //this.gameController = new GameController(board, new ConsoleInput());//TODO Lorte løsning
 
         for(int y = 0; y < 8; y++){
             for (int x = 0; x < 8; x++){
@@ -53,7 +53,6 @@ public class PictureManager {
         if (icon != null) {
             JLabel label = new JLabel(icon);
             label.setBounds(x, y, icon.getIconWidth(), icon.getIconHeight());
-
 
             clickablePictures.add(label);
         } else {
@@ -100,17 +99,18 @@ public class PictureManager {
             ImageIcon icon = createImageIcon(path);
             source.setIcon(icon);
 
-            changeAllIcons(source);
+            //changeAllIcons(source);
 
         }
 
     }
 
-    public void update(JLabel source, int x, int y) {
+    public void update(JLabel source, int x, int y) { //TODO Skal nok hedde reveal
         Block current = board.getBlockObject(x, y);
+
         current.setIsRevealed(true);
 
-        gameController.updateBoard(blockArray); //TODO Lorte løsning
+        //gameController.updateBoard(blockArray); //TODO Lorte løsning
 
         String path;
 
@@ -128,7 +128,7 @@ public class PictureManager {
                             blank0Path, blank1Path, blank2Path, blank3Path,
                             blank4Path, blank5Path, blank6Path, blank7Path, blank8Path
                     };
-                    int surroundingBombs = blockArray[x][y].getSurroundingBombs();
+                    int surroundingBombs = blockArray[blockX][blockY].getSurroundingBombs();
                     // Use the surroundingBombs value as an index to get the path
                     int index = Math.min(surroundingBombs, paths.length - 1);
                     path = paths[index];
@@ -145,7 +145,7 @@ public class PictureManager {
     }
 
     public void changeAllIcons(JLabel source) { //TODO skal nok kaldes gameLost eller lignende
-        Block[][] blockArray = board.getBlockArray();
+        //Block[][] blockArray = board.getBlockArray();
         String path;
 
         for (JLabel block : clickablePictures) {
