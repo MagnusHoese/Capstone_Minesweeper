@@ -21,14 +21,7 @@ public class Board {
         this.boardBombs = Math.min(boardBombs, this.boardSize);
 
         this.blockList = new ArrayList<>();
-        for (int x = 0; x < boardWidth; x++) {
-            List<Block> row = new ArrayList<>();
-            for (int y = 0; y < boardHeight; y++) {
-                // First load all black spaces
-                row.add(new Blank(this, x, y));
-            }
-            this.blockList.add(row);
-        }
+
         //Generate board
         generateBoard();
 
@@ -90,32 +83,47 @@ public class Board {
     }
 
 
-    public void initBoard() {
-
-
+    public void generateBoard() {
+        generateBlankSpaces();  //Generate the Board with blank spaces
+        placeBombs(); //Generate the list of indexes where a bomb should be placed
+        setSurroundingBombs(); //Lastly generate how many bombs there is around the blanks
     }
 
-    public void generateBoard() {
+    private void generateBlankSpaces() {
+        for (int x = 0; x < boardWidth; x++) {
+            List<Block> row = new ArrayList<>();
+            for (int y = 0; y < boardHeight; y++) {
+                // Load all blank spaces
+                row.add(new Blank(this, x, y));
+            }
+            this.blockList.add(row);
+        }
+    }
 
-
-        //Generate the list of indexes where a bomb should be placed
+    private void placeBombs() {
         Random rand = new Random();
-
-        Set<Block> bombSet = new LinkedHashSet<>();
-
-
+        Set<Block> bombSet = new HashSet<>();
 
         while (bombSet.size() < this.boardBombs) {
             int randomXIndex = rand.nextInt(this.boardWidth);
             int randomYIndex = rand.nextInt(this.boardHeight);
 
             bombSet.add(new Bomb(this, randomXIndex, randomYIndex));
-
         }
 
-        for(Block bomb: bombSet)
+        for (Block bomb : bombSet) {
             blockList.get(bomb.getX()).set(bomb.getY(), bomb);
+        }
+    }
 
-
+    private void setSurroundingBombs() {
+        for (List<Block> row : blockList) {
+            for (Block block : row) {
+                if (!block.isBomb()) {
+                    ((Blank) block).setSurroundingBombs();
+                }
+            }
+        }
     }
 }
+

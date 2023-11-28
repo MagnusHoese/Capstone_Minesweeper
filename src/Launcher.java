@@ -1,7 +1,10 @@
 import gameLogic.GameController;
+import gameLogic.Timer;
 import gameObjects.Board;
 import input.ConsoleInput;
 import renderers.TextBoardRenderer;
+
+import java.util.TimerTask;
 
 public class Launcher {
 
@@ -14,12 +17,14 @@ public class Launcher {
         Board board = new Board(boardWidth, boardHeight, boardBombs);
 
         ConsoleInput input = new ConsoleInput();
-        TextBoardRenderer renderer = new TextBoardRenderer(board);
-        GameController gameController = new GameController(board, renderer, input);
+        Timer timer = new Timer();
+        TextBoardRenderer renderer = new TextBoardRenderer(board, timer);
+        GameController gameController = new GameController(board, renderer, input, timer);
 
         gameController.startGame();
-
     }
+
+
 }
 
 

@@ -3,13 +3,12 @@ package gameObjects;
 import java.util.Objects;
 
 public abstract class Block {
-    private int x;
-    private int y;
-    private int index;
+    private final int x;
+    private final int y;
     private boolean isBomb;
     private boolean hasFlag = false;
     private boolean isRevealed;
-    private Board board;
+    private final Board board;
     private int surroundingBombs = 0;
     private String color;
 
@@ -71,7 +70,6 @@ public abstract class Block {
         Block block = (Block) o;
         return x == block.x &&
                 y == block.y &&
-                index == block.index &&
                 isBomb == block.isBomb &&
                 hasFlag == block.hasFlag &&
                 isRevealed == block.isRevealed &&
@@ -81,7 +79,7 @@ public abstract class Block {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, index, isBomb, hasFlag, isRevealed, board, surroundingBombs);
+        return Objects.hash(x, y, isBomb, hasFlag, isRevealed, board, surroundingBombs);
     }
 
 

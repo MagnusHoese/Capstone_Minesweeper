@@ -1,5 +1,6 @@
 package gameLogic;
 
+import enums.TextManipulation;
 import gameObjects.Blank;
 import gameObjects.Block;
 import gameObjects.Board;
@@ -8,26 +9,25 @@ import renderers.TextBoardRenderer;
 
 import java.util.List;
 
+import static enums.TextManipulation.*;
+
 public class GameController {
-
-    public static final String ANSI_RESET = "\u001B[0m";
-
-    public static final String GREEN_BACKGROUND = "\u001B[42m";
-    public static final String RED_BACKGROUND = "\u001B[41m";
 
     private Board board;
 
     private ConsoleInput input;
     private TextBoardRenderer renderer;
+    private Timer timer;
     private int boardHeight;
     private int boardWidth;
     private List<List<Block>> blockList;
 
 
-    public GameController(Board board, TextBoardRenderer renderer, ConsoleInput input) {
+    public GameController(Board board, TextBoardRenderer renderer, ConsoleInput input, Timer timer) {
         this.board = board;
         this.input = input;
         this.renderer = renderer;
+        this.timer = timer;
         this.boardHeight = board.getBoardHeight();
         this.boardWidth = board.getBoardWidth();
         this.blockList = board.getBlockList();
@@ -36,6 +36,8 @@ public class GameController {
     public void startGame() {
 
         boolean gameRunning = true;
+        
+        timer.startTimer();
 
         renderer.draw();
 
@@ -49,11 +51,11 @@ public class GameController {
 
             if(allBombsFlagged()){
                 gameRunning = false;
-                System.out.println(GREEN_BACKGROUND + "All flags planted correctly! Congrats!" + ANSI_RESET);
+                System.out.println(GREEN_BACKGROUND.getAnsiCode() + "All flags planted correctly! Congrats!" + RESET.getAnsiCode());
 
             } else if (isBombRevealed()) {
                 gameRunning = false;
-                System.out.println(RED_BACKGROUND + "You hit a bomb :( - These were the bombs ↓" + ANSI_RESET);
+                System.out.println(RED_BACKGROUND.getAnsiCode() + "You hit a bomb :( - These were the bombs ↓" + RESET.getAnsiCode());
                 revealAll();
                 renderer.draw();
 

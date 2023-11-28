@@ -2,12 +2,10 @@ package gameObjects;
 
 public class Bomb extends Block{
 
-    boolean hasBomb = true;
-
 
     @Override
     public String getColor() {
-        return "\u001B[40m";
+        return "\u001B[41m";
     }
 
     public Bomb(Board board, int x, int y) {
@@ -16,6 +14,6 @@ public class Bomb extends Block{
 
     @Override
     public boolean isBomb() {
-        return hasBomb;
+        return true;
     }
 }
