@@ -4,6 +4,8 @@ import enums.TextManipulation;
 import gameObjects.Blank;
 import gameObjects.Block;
 import gameObjects.Board;
+import gameStates.GameState;
+import gameStates.StartState;
 import input.ConsoleInput;
 import renderers.TextBoardRenderer;
 
@@ -21,6 +23,9 @@ public class GameController {
     private int boardHeight;
     private int boardWidth;
     private List<List<Block>> blockList;
+    private InputInterpreter inputInterpreter;
+
+    private GameState currentGameState;
 
 
     public GameController(Board board, TextBoardRenderer renderer, ConsoleInput input, Timer timer) {
@@ -31,15 +36,15 @@ public class GameController {
         this.boardHeight = board.getBoardHeight();
         this.boardWidth = board.getBoardWidth();
         this.blockList = board.getBlockList();
+        this.inputInterpreter = new InputInterpreter(board, input, blockList);
+        this.currentGameState = new StartState(timer, renderer);
     }
 
     public void startGame() {
 
         boolean gameRunning = true;
         
-        timer.startTimer();
 
-        renderer.draw();
 
         while (gameRunning) {
 
@@ -120,38 +125,11 @@ public class GameController {
     }
 
     private void getInput() {
-        input.setInputString();
+        inputInterpreter.interpretInput(input.getInputString());
 
-        int inputX = input.getXInput() - 1;
-        int inputY = input.getYInput() - 1;
-        String statusInput = input.getStatusInput();
-
-        handleInput(inputX, inputY, statusInput);
     }
 
-    private void handleInput(int x, int y, String status) {
-        if (board.isWithinBounds(x, y)) {
-            switch (status) {
-                case "r":
-                    blockList.get(x).get(y).setIsRevealed(true);
-                    break;
-                case "f":
-                    if(!blockList.get(x).get(y).isBlankRevealed()) {
-                        blockList.get(x).get(y).setFlag(true);
-                    } else {
-                        System.out.println("Cell already revealed. Try Again!");
-                        getInput();
-                    }
-                    break;
-                default:
-                    System.out.println("Invalid input. Try Again!");
-                    getInput();
-            }
-        } else {
-            System.out.println("Invalid coordinates. Try Again!");
-            getInput();
-        }
-    }
+
 
     private void revealAll() {
 

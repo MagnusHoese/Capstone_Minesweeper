@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/BlockColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/TextManipulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameLogic/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameLogic/InputInterpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameLogic/InputListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameStates/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameStates/StartState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Positions.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameLogic/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameLogic/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Blank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/ConsoleInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -135,7 +128,7 @@
       <workItem from="1700560135684" duration="1044000" />
       <workItem from="1700839449537" duration="4210000" />
       <workItem from="1700845210853" duration="1975000" />
-      <workItem from="1701166110844" duration="16033000" />
+      <workItem from="1701166110844" duration="21934000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />
