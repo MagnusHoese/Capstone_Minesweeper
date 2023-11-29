@@ -1,10 +1,7 @@
 package gameObjects;
 
 import enums.BlockColors;
-
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
+import enums.BlockType;
 
 public class Blank extends Block{
 
@@ -14,7 +11,7 @@ public class Blank extends Block{
 
 
     public Blank(Board board, int x, int y) {
-        super(board, x, y);
+        super(board, x, y, BlockType.BLANK);
     }
 
     @Override

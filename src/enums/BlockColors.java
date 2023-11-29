@@ -1,7 +1,5 @@
 package enums;
 
-import java.awt.*;
-
 public enum BlockColors {
 
     BLACK0("\u001B[30;"),

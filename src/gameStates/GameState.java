@@ -1,6 +1,7 @@
 package gameStates;
 
+import gameLogic.GameController;
+
 public interface GameState {
-    public void handle();
-    public void nextState();
+    public void handle(GameController gameController);
 }

@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class ConsoleInput {
 
-    private int xInput;
-    private int yInput;
-    private String statusInput;
-
     private final Scanner scanner;
 
     public ConsoleInput() {
@@ -34,9 +30,9 @@ public class ConsoleInput {
             }
 
             try {
-                xInput = Integer.parseInt(formatted[0]);
-                yInput = Integer.parseInt(formatted[1]);
-                statusInput = formatted[2];
+                int xInput = Integer.parseInt(formatted[0]);
+                int yInput = Integer.parseInt(formatted[1]);
+                String statusInput = formatted[2];
                 return formatted; // Break the loop and return array if input is valid
 
             } catch (NumberFormatException e) {
@@ -44,18 +40,6 @@ public class ConsoleInput {
             }
 
         } while (true);
-    }
-
-    public int getXInput() {
-        return xInput;
-    }
-
-    public int getYInput() {
-        return yInput;
-    }
-
-    public String getStatusInput() {
-        return statusInput;
     }
 }
 

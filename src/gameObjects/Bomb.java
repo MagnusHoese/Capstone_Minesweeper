@@ -1,5 +1,7 @@
 package gameObjects;
 
+import enums.BlockType;
+
 public class Bomb extends Block{
 
 
@@ -9,7 +11,7 @@ public class Bomb extends Block{
     }
 
     public Bomb(Board board, int x, int y) {
-        super(board, x, y);
+        super(board, x, y, BlockType.BOMB);
     }
 
     @Override

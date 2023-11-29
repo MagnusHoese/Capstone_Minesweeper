@@ -1,5 +1,7 @@
 package gameObjects;
 
+import enums.BlockType;
+
 import java.util.*;
 
 public class Board {
@@ -35,10 +37,6 @@ public class Board {
         return boardHeight;
     }
 
-    public int getBoardSize() {
-        return boardSize;
-    }
-
     public int getBoardBombs() {
         return boardBombs;
     }
@@ -52,7 +50,7 @@ public class Board {
     }
 
     public boolean getBombStatus(int x, int y) {
-        return blockList.get(x).get(y).isBomb();
+        return blockList.get(x).get(y).getBlockType() == BlockType.BOMB;
     }
 
     public boolean isBlankRevealed(int x, int y) {
@@ -69,7 +67,7 @@ public class Board {
 
     }
 
-    public int getFlagCount() { //TODO Fjern inputparameter
+    public int getFlagCount() {
         int flagAmount = 0;
 
         for(List<Block> row : this.blockList) {
@@ -80,6 +78,16 @@ public class Board {
         }
 
         return flagAmount;
+    }
+
+    public void revealBoard() {
+
+        for (int y = 0; y < boardHeight; y++) { //TODO Fix forloop
+            for (int x = 0; x < boardWidth; x++) {
+                blockList.get(x).get(y).setFlag(false);
+                blockList.get(x).get(y).setIsRevealed(true);
+            }
+        }
     }
 
 
@@ -119,7 +127,7 @@ public class Board {
     private void setSurroundingBombs() {
         for (List<Block> row : blockList) {
             for (Block block : row) {
-                if (!block.isBomb()) {
+                if (block.getBlockType() == BlockType.BLANK) {
                     ((Blank) block).setSurroundingBombs();
                 }
             }

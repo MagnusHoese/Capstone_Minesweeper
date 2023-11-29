@@ -1,21 +1,27 @@
 package gameObjects;
 
+import enums.BlockType;
+
 import java.util.Objects;
 
 public abstract class Block {
     private final int x;
     private final int y;
     private boolean isBomb;
-    private boolean hasFlag = false;
+    private boolean hasFlag;
     private boolean isRevealed;
     private final Board board;
-    private int surroundingBombs = 0;
+    private int surroundingBombs;
     private String color;
 
-    public Block(Board board, int x, int y) {
+    private BlockType blockType;
+
+    public Block(Board board, int x, int y, BlockType blockType) {
         this.board = board;
         this.x = x;
         this.y = y;
+        this.blockType = blockType;
+        this.hasFlag = false;
         this.isRevealed = false;
     }
 
@@ -61,6 +67,9 @@ public abstract class Block {
 
     public void setColor(String color) {
         this.color = color;
+    }
+    public BlockType getBlockType() {
+        return blockType;
     }
 
     @Override

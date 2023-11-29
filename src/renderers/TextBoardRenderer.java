@@ -1,8 +1,8 @@
 package renderers;
 
-import enums.TextManipulation;
 import gameLogic.Timer;
 import gameObjects.Block;
+import enums.BlockType;
 import gameObjects.Board;
 
 import static enums.TextManipulation.*;
@@ -61,7 +61,7 @@ public class TextBoardRenderer implements BoardRenderer {
     }
 
     private void printRevealedBlockContent(Block block) {
-        if (block.isBomb()) {
+        if (block.getBlockType() == BlockType.BOMB) {
             System.out.print(block.getColor() + " # " + RESET.getAnsiCode());
         } else {
             if (block.getSurroundingBombs() == 0) {

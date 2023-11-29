@@ -1,8 +1,7 @@
-package gameLogic;
+package input;
 
 import gameObjects.Block;
 import gameObjects.Board;
-import gui.Input;
 import input.ConsoleInput;
 
 import java.util.List;
@@ -29,7 +28,10 @@ public class InputInterpreter {
     }
 
     private void handleInput(int x, int y, String status) {
+        System.out.println(x+" "+y);
+
         if (board.isWithinBounds(x, y)) {
+
             switch (status) {
                 case "r":
                     blockList.get(x).get(y).setIsRevealed(true);
