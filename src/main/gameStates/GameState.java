@@ -1,6 +1,6 @@
-package gameStates;
+package main.gameStates;
 
-import gameLogic.GameController;
+import main.gameLogic.GameController;
 
 public interface GameState {
     public void handle(GameController gameController);

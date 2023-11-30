@@ -1,6 +1,6 @@
-package gameObjects;
+package main.gameObjects;
 
-import enums.BlockType;
+import main.enums.BlockType;
 
 public class Bomb extends Block{
 

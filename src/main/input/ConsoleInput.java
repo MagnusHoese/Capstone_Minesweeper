@@ -1,4 +1,4 @@
-package input;
+package main.input;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class ConsoleInput {
     public String[] getInputString() {
 
         do {
-            System.out.print("Enter input (format: x,y,status): ");
+            System.out.print("Enter main.input (format: x,y,status(r=reveal/f=flag): ");
             String inputString = scanner.nextLine().trim();
 
             if (inputString.isEmpty()) {
@@ -25,7 +25,7 @@ public class ConsoleInput {
             String[] formatted = inputString.split(",");
 
             if (formatted.length != 3) {
-                System.out.println("Invalid input format. Try Again!");
+                System.out.println("Invalid main.input format. Try Again!");
                 continue;
             }
 
@@ -33,10 +33,10 @@ public class ConsoleInput {
                 int xInput = Integer.parseInt(formatted[0]);
                 int yInput = Integer.parseInt(formatted[1]);
                 String statusInput = formatted[2];
-                return formatted; // Break the loop and return array if input is valid
+                return formatted; // Break the loop and return array if main.input is valid
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid numeric input. Try Again!");
+                System.out.println("Invalid numeric main.input. Try Again!");
             }
 
         } while (true);

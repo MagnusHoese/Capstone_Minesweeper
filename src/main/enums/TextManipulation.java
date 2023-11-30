@@ -1,4 +1,4 @@
-package enums;
+package main.enums;
 
 public enum TextManipulation {
     RESET("\u001B[0m"),

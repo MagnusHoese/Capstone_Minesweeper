@@ -1,6 +1,6 @@
-package gameObjects;
+package main.gameObjects;
 
-import enums.BlockType;
+import main.enums.BlockType;
 
 import java.util.*;
 
@@ -108,7 +108,7 @@ public class Board {
         }
     }
 
-    private void placeBombs() {
+    public void placeBombs() { //Made public for the test
         Random rand = new Random();
         Set<Block> bombSet = new HashSet<>();
 
@@ -118,13 +118,14 @@ public class Board {
 
             bombSet.add(new Bomb(this, randomXIndex, randomYIndex));
         }
+        System.out.println(bombSet.size());
 
         for (Block bomb : bombSet) {
             blockList.get(bomb.getX()).set(bomb.getY(), bomb);
         }
     }
 
-    private void setSurroundingBombs() {
+    public void setSurroundingBombs() { //Made public for the test
         for (List<Block> row : blockList) {
             for (Block block : row) {
                 if (block.getBlockType() == BlockType.BLANK) {

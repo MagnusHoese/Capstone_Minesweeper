@@ -1,12 +1,12 @@
-package gameLogic;
+package main.gameLogic;
 
-import gameObjects.Block;
-import gameObjects.Board;
-import gameStates.GameState;
-import gameStates.StartState;
-import input.ConsoleInput;
-import input.InputInterpreter;
-import renderers.BoardRenderer;
+import main.gameObjects.Block;
+import main.gameObjects.Board;
+import main.gameStates.GameState;
+import main.gameStates.StartState;
+import main.input.ConsoleInput;
+import main.input.InputInterpreter;
+import main.renderers.BoardRenderer;
 
 import java.util.List;
 

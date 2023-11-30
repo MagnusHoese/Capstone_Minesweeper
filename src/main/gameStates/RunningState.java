@@ -1,11 +1,11 @@
-package gameStates;
+package main.gameStates;
 
-import gameLogic.BoardUpdater;
-import gameLogic.GameController;
-import input.InputInterpreter;
-import gameLogic.WinLossChecker;
-import input.ConsoleInput;
-import renderers.BoardRenderer;
+import main.gameLogic.BoardUpdater;
+import main.gameLogic.GameController;
+import main.input.InputInterpreter;
+import main.gameLogic.WinLossChecker;
+import main.input.ConsoleInput;
+import main.renderers.BoardRenderer;
 
 
 public class RunningState implements GameState {
@@ -23,7 +23,6 @@ public class RunningState implements GameState {
 
     @Override
     public void handle(GameController gameController) {
-        System.out.println("Running");
 
         //Update board
         BoardUpdater boardUpdater = new BoardUpdater(gameController);

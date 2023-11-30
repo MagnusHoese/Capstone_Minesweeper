@@ -1,8 +1,8 @@
-package gameLogic;
+package main.gameLogic;
 
-import gameObjects.Blank;
-import gameObjects.Block;
-import gameObjects.Board;
+import main.gameObjects.Blank;
+import main.gameObjects.Block;
+import main.gameObjects.Board;
 
 import java.util.List;
 

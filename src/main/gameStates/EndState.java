@@ -1,9 +1,9 @@
-package gameStates;
+package main.gameStates;
 
-import gameLogic.GameController;
-import renderers.BoardRenderer;
+import main.gameLogic.GameController;
+import main.renderers.BoardRenderer;
 
-import static enums.TextManipulation.*;
+import static main.enums.TextManipulation.*;
 
 public class EndState implements GameState{
 

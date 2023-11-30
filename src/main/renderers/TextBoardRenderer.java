@@ -1,11 +1,11 @@
-package renderers;
+package main.renderers;
 
-import gameLogic.Timer;
-import gameObjects.Block;
-import enums.BlockType;
-import gameObjects.Board;
+import main.gameLogic.Timer;
+import main.gameObjects.Block;
+import main.enums.BlockType;
+import main.gameObjects.Board;
 
-import static enums.TextManipulation.*;
+import static main.enums.TextManipulation.*;
 
 public class TextBoardRenderer implements BoardRenderer {
     private static final String BOARD_SEPARATOR = " --- +";

@@ -1,8 +1,7 @@
-package input;
+package main.input;
 
-import gameObjects.Block;
-import gameObjects.Board;
-import input.ConsoleInput;
+import main.gameObjects.Block;
+import main.gameObjects.Board;
 
 import java.util.List;
 
@@ -28,7 +27,6 @@ public class InputInterpreter {
     }
 
     private void handleInput(int x, int y, String status) {
-        System.out.println(x+" "+y);
 
         if (board.isWithinBounds(x, y)) {
 
@@ -45,7 +43,7 @@ public class InputInterpreter {
                     }
                     break;
                 default:
-                    System.out.println("Invalid input. Try Again!");
+                    System.out.println("Invalid main.input. Try Again!");
                     interpretInput(consoleInput.getInputString());
             }
         } else {

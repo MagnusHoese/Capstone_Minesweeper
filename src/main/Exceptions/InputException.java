@@ -1,4 +1,4 @@
-package Exceptions;
+package main.Exceptions;
 
 public class InputException extends Exception {
     public InputException(String message) {

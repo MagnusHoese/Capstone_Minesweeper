@@ -1,6 +1,6 @@
-package gameObjects;
+package main.gameObjects;
 
-import enums.BlockType;
+import main.enums.BlockType;
 
 import java.util.Objects;
 

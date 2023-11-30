@@ -1,9 +1,11 @@
-import gameLogic.GameController;
-import gameLogic.Timer;
-import gameObjects.Board;
-import input.ConsoleInput;
-import renderers.BoardRenderer;
-import renderers.TextBoardRenderer;
+package main;
+
+import main.gameLogic.GameController;
+import main.gameLogic.Timer;
+import main.gameObjects.Board;
+import main.input.ConsoleInput;
+import main.renderers.BoardRenderer;
+import main.renderers.TextBoardRenderer;
 
 public class Launcher {
 
@@ -29,7 +31,7 @@ public class Launcher {
 
 
         - On this line:
-        "gameLogic.Blank current = (gameLogic.Blank)blockArray[i];
+        "main.gameLogic.Blank current = (main.gameLogic.Blank)blockArray[i];
          System.out.print(" "+ current.getSurroundingBombs() + " ");"
          Do i have to do this, or is there a better practice way to call a subclass function
          from the superclass?

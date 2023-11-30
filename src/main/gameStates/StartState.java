@@ -1,10 +1,10 @@
-package gameStates;
+package main.gameStates;
 
-import gameLogic.GameController;
-import input.InputInterpreter;
-import gameLogic.Timer;
-import input.ConsoleInput;
-import renderers.BoardRenderer;
+import main.gameLogic.GameController;
+import main.input.InputInterpreter;
+import main.gameLogic.Timer;
+import main.input.ConsoleInput;
+import main.renderers.BoardRenderer;
 
 public class StartState implements GameState{
 

@@ -1,7 +1,7 @@
-package gameObjects;
+package main.gameObjects;
 
-import enums.BlockColors;
-import enums.BlockType;
+import main.enums.BlockColors;
+import main.enums.BlockType;
 
 public class Blank extends Block{
 

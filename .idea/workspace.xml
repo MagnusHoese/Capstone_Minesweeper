@@ -5,49 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/InputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/BlockType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameLogic/BoardUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameLogic/WinLossChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameStates/EndState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gameStates/RunningState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/main/gameObjects/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blank8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/block.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/bomb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/flag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/minesweeper_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/BlockColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/BlockColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameLogic/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameLogic/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameLogic/InputInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/InputInterpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameLogic/InputListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameLogic/UpdateBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Blank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/BlockValues.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameObjects/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameObjects/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameStates/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameStates/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameStates/StartState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameStates/StartState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DrawBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Input.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MainWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PictureManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/TestMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/ConsoleInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/SwingInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderers/BoardRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderers/BoardRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderers/PictureBoardRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capstone_Minesweeper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Capstone_Minesweeper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exceptions/InputException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Exceptions/InputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/BlockColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/BlockColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/BlockType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/BlockType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/TextManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/TextManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameLogic/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/BoardUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameLogic/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameLogic/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameLogic/WinLossChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/WinLossChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Blank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameObjects/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameStates/EndState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/EndState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameStates/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameStates/RunningState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/RunningState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameStates/StartState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/StartState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/input/ConsoleInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/InputInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/input/InputInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderers/BoardRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/renderers/BoardRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderers/TextBoardRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/renderers/TextBoardRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +43,15 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -80,19 +67,27 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "states",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15332031",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,37 +95,81 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\magnu\Capstone_Minesweeper\src" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="main.gameObjects" />
+      <recent name="gameObjects" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Launcher">
-    <configuration name="ConsoleInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="input.ConsoleInput" />
-      <module name="Capstone_Minesweeper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="input.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Launcher" />
+      <option name="MAIN_CLASS_NAME" value="main.Launcher" />
       <module name="Capstone_Minesweeper" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.TestMain" />
+    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone_Minesweeper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.*" />
+          <option name="PATTERN" value="main.gameObjects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="main.gameObjects" />
+      <option name="MAIN_CLASS_NAME" value="main.gameObjects.BoardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.generateBoard_boardWontCreateBoardWithMoreBombsThanCells" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone_Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.gameObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.gameObjects" />
+      <option name="MAIN_CLASS_NAME" value="main.gameObjects.BoardTest" />
+      <option name="METHOD_NAME" value="generateBoard_boardWontCreateBoardWithMoreBombsThanCells" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.placeBombs_distributesBombsCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone_Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.gameObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.gameObjects" />
+      <option name="MAIN_CLASS_NAME" value="main.gameObjects.BoardTest" />
+      <option name="METHOD_NAME" value="placeBombs_distributesBombsCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.setSurroundingBombs_calculatesCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone_Minesweeper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.gameObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main.gameObjects" />
+      <option name="MAIN_CLASS_NAME" value="main.gameObjects.BoardTest" />
+      <option name="METHOD_NAME" value="setSurroundingBombs_calculatesCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,8 +177,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.TestMain" />
-        <item itemvalue="Application.ConsoleInput" />
+        <item itemvalue="JUnit.BoardTest.setSurroundingBombs_calculatesCorrectly" />
+        <item itemvalue="JUnit.BoardTest.placeBombs_distributesBombsCorrectly" />
+        <item itemvalue="JUnit.BoardTest" />
+        <item itemvalue="JUnit.BoardTest.generateBoard_boardWontCreateBoardWithMoreBombsThanCells" />
       </list>
     </recent_temporary>
   </component>
