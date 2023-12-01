@@ -15,7 +15,7 @@ public class Launcher {
 
     private static int boardWidth = 8;
     private static int boardHeight = 8;
-    private static int boardBombs = 1;
+    private static int boardBombs = 10;
 
     public static void main(String[] args) {
 

@@ -39,7 +39,12 @@ public class InputInterpreter {
             switch (status) {
 
                 case "r":
-                    blockList.get(x).get(y).setIsRevealed(true);
+                    if(!blockList.get(x).get(y).hasFlag()) {
+                        blockList.get(x).get(y).setIsRevealed(true);
+                    } else {
+                        System.out.println("Cell is flagged1.. Try Again!");
+                        interpretInput(consoleInput.getInputString());
+                    }
                     break;
                 case "f":
                     if(!blockList.get(x).get(y).isBlankRevealed()) {
