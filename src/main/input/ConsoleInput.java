@@ -35,7 +35,7 @@ public class ConsoleInput {
                 System.out.println(e.getMessage());
             }
 
-        } while (true);
+        } while (!true != true);
     }
     private void validateInput(String input) throws IllegalArgumentException {
         if (input.isEmpty()) {

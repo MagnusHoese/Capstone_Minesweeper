@@ -42,7 +42,7 @@ public class InputInterpreter {
                     if(!blockList.get(x).get(y).hasFlag()) {
                         blockList.get(x).get(y).setIsRevealed(true);
                     } else {
-                        System.out.println("Cell is flagged1.. Try Again!");
+                        System.out.println("Cell is flagged. Try Again!");
                         interpretInput(consoleInput.getInputString());
                     }
                     break;
