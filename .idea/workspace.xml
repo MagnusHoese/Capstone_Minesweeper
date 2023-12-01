@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6695f004-47c4-4968-9317-271445a37dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/main/input/ConsoleInputTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Exceptions/InputException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minesweeper_capstone.vpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/enums/BlockColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/BlockColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/enums/BlockType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/BlockType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/enums/TextManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/TextManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gameLogic/BoardUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/BoardUpdater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameLogic/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameLogic/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gameLogic/WinLossChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameLogic/WinLossChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gameObjects/Blank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Blank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameObjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Block.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameObjects/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gameObjects/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameObjects/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameStates/EndState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/EndState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gameStates/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameStates/RunningState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/RunningState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gameStates/StartState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gameStates/StartState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/input/ConsoleInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/input/ConsoleInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/input/InputInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/input/InputInterpreter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/main/gameObjects/BoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/main/gameObjects/BoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main/input/ConsoleInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/main/input/ConsoleInputTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +48,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -94,7 +104,7 @@
       <recent name="gameObjects" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConsoleInputTest">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Launcher" />
       <module name="Capstone_Minesweeper" />
@@ -166,9 +176,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.ConsoleInputTest" />
         <item itemvalue="JUnit.ConsoleInputTest.invalidIncorrectFormat" />
-        <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.ConsoleInputTest.invalidEmptyInputString" />
         <item itemvalue="JUnit.BoardTest" />
       </list>
@@ -197,7 +207,7 @@
       <workItem from="1700845210853" duration="1975000" />
       <workItem from="1701166110844" duration="21934000" />
       <workItem from="1701253081218" duration="12695000" />
-      <workItem from="1701429394790" duration="4987000" />
+      <workItem from="1701429394790" duration="10519000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <option name="closed" value="true" />

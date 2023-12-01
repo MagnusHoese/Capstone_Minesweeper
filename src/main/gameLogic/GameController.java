@@ -1,3 +1,7 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
 package main.gameLogic;
 
 import main.gameObjects.Block;
@@ -26,10 +30,6 @@ public class GameController {
         this.blockList = board.getBlockList();   
         this.inputInterpreter = new InputInterpreter(board, input, blockList);
         setCurrentGameState(new StartState(timer, renderer, inputInterpreter));
-    }
-
-    public GameState getCurrentGameState() {
-        return currentGameState;
     }
 
     public void setCurrentGameState(GameState state){

@@ -1,6 +1,9 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
 package main.gameObjects;
 
-import main.enums.BlockType;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

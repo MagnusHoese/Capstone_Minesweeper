@@ -1,3 +1,7 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
 package main.gameStates;
 
 import main.gameLogic.BoardUpdater;

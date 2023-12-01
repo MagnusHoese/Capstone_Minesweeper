@@ -1,3 +1,7 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
 package main.gameObjects;
 
 import main.enums.BlockType;
@@ -82,10 +86,10 @@ public class Board {
 
     public void revealBoard() {
 
-        for (int y = 0; y < boardHeight; y++) { //TODO Fix forloop
-            for (int x = 0; x < boardWidth; x++) {
-                blockList.get(x).get(y).setFlag(false);
-                blockList.get(x).get(y).setIsRevealed(true);
+        for (List<Block> row : blockList) {
+            for (Block block : row) {
+                block.setFlag(false);
+                block.setIsRevealed(true);
             }
         }
     }
@@ -108,9 +112,9 @@ public class Board {
         }
     }
 
-    private void placeBombs() { //Made public for the test
+    private void placeBombs() {
         Random rand = new Random();
-        Set<Block> bombSet = new HashSet<>();
+        Set<Block> bombSet = new HashSet<>(); //This uses Set instead of List, because a set can't have duplicates
 
         while (bombSet.size() < this.boardBombs) {
             int randomXIndex = rand.nextInt(this.boardWidth);

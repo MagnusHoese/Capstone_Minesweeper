@@ -1,3 +1,7 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
 package main;
 
 import main.gameLogic.GameController;
@@ -11,7 +15,7 @@ public class Launcher {
 
     private static int boardWidth = 8;
     private static int boardHeight = 8;
-    private static int boardBombs = 10;
+    private static int boardBombs = 1;
 
     public static void main(String[] args) {
 
@@ -23,15 +27,3 @@ public class Launcher {
         new GameController(board, renderer, input, timer);
     }
 }
-
-
-/*
-
-        - On this line:
-        "main.gameLogic.Blank current = (main.gameLogic.Blank)blockArray[i];
-         System.out.print(" "+ current.getSurroundingBombs() + " ");"
-         Do i have to do this, or is there a better practice way to call a subclass function
-         from the superclass?
-
-
- */

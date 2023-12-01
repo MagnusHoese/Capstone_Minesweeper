@@ -1,5 +1,8 @@
-package main.gameLogic;
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
 
+package main.gameLogic;
 
 import main.gameObjects.Block;
 import main.gameObjects.Board;
@@ -9,23 +12,19 @@ import java.util.List;
 public class WinLossChecker {
 
     private Board board;
-    private int boardHeight;
-    private int boardWidth;
     private List<List<Block>> blockList;
 
     public WinLossChecker(GameController gameController) {
         this.board = gameController.getBoard();
-        this.boardWidth = board.getBoardWidth();
-        this.boardHeight = board.getBoardHeight();
         this.blockList = board.getBlockList();
     }
     public boolean allBombsFlagged() {
         int flaggedBombs = 0;
 
 
-        for (int y = 0; y < boardHeight; y++) {
-            for (int x = 0; x < boardWidth; x++) { //TODO Fix forloop
-                if(blockList.get(x).get(y).hasFlag() && board.getBombStatus(x, y))
+        for (List<Block> row : blockList) {
+            for (Block block : row) {
+                if(block.hasFlag() && block.isBomb())
                     flaggedBombs++;
             }
         }
@@ -34,9 +33,9 @@ public class WinLossChecker {
 
     public boolean isBombRevealed() {
 
-        for (int y = 0; y < boardHeight; y++) {
-            for (int x = 0; x < boardWidth; x++) { //TODO Fix forloop
-                if(blockList.get(x).get(y).isBlankRevealed() && board.getBombStatus(x, y)) {
+        for (List<Block> row : blockList) {
+            for (Block block : row) {
+                if(block.isBlankRevealed() && block.isBomb()) {
                     return true;
                 }
             }
