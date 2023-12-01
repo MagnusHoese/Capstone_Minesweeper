@@ -1,24 +1,33 @@
+/**
+ * @author Magnus Høse, magjen22@aau.student.dk
+ */
+
+package main.gameObjects;
+
+import main.enums.BlockType;
+
 import java.util.Objects;
 
 public abstract class Block {
-    private int x;
-    private int y;
-    private int index;
-    private boolean hasBomb;
-    private boolean hasFlag = false;
+    private final int x;
+    private final int y;
+    private boolean isBomb;
+    private boolean hasFlag;
     private boolean isRevealed;
-    private Board board;
-    private int surroundingBombs = 0;
+    private final Board board;
+    private int surroundingBombs;
     private String color;
 
-    public Block(Board board, int x, int y) {
+    private final BlockType blockType;
+
+    public Block(Board board, int x, int y, BlockType blockType) {
         this.board = board;
         this.x = x;
         this.y = y;
+        this.blockType = blockType;
+        this.hasFlag = false;
         this.isRevealed = false;
     }
-
-
 
     public int getSurroundingBombs() {
         return surroundingBombs;
@@ -32,15 +41,15 @@ public abstract class Block {
         return y;
     }
 
-    public boolean getBombStatus() {
-        return hasBomb;
+    public boolean isBomb() {
+        return isBomb;
     }
 
     public boolean isBlankRevealed() {
         return isRevealed;
     }
 
-    public void setBlankStatus(boolean revealed) {
+    public void setIsRevealed(boolean revealed) {
         isRevealed = revealed;
     }
 
@@ -63,6 +72,9 @@ public abstract class Block {
     public void setColor(String color) {
         this.color = color;
     }
+    public BlockType getBlockType() {
+        return blockType;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -71,8 +83,7 @@ public abstract class Block {
         Block block = (Block) o;
         return x == block.x &&
                 y == block.y &&
-                index == block.index &&
-                hasBomb == block.hasBomb &&
+                isBomb == block.isBomb &&
                 hasFlag == block.hasFlag &&
                 isRevealed == block.isRevealed &&
                 surroundingBombs == block.surroundingBombs &&
@@ -81,7 +92,7 @@ public abstract class Block {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, index, hasBomb, hasFlag, isRevealed, board, surroundingBombs);
+        return Objects.hash(x, y, isBomb, hasFlag, isRevealed, board, surroundingBombs);
     }
 
 
