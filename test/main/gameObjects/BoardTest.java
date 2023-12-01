@@ -3,6 +3,9 @@ package main.gameObjects;
 import main.enums.BlockType;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
@@ -40,10 +43,9 @@ class BoardTest {
         int height = 8;
         int bombs = 10;
 
-        Board board = new Board(width, height, bombs);
-
         // Act
-        board.placeBombs();
+        Board board = new Board(width, height, bombs); // The placeBombs are called in the constructor
+
 
         // Assert
         assertEquals(bombs, countPlacedBombs(board), "Incorrect number of bombs placed"); //
@@ -64,9 +66,6 @@ class BoardTest {
             for (int x = 0; x < board.getBoardWidth(); x++) {
                 if (board.getBlockObject(x,y).isBomb()) {
                     bombCount++;
-
-                    System.out.println(x + " " + y);
-                    System.out.println(board.getBlockObject(x,y).getBlockType());
                 }
             }
         }
@@ -81,6 +80,9 @@ class BoardTest {
         int bombs = 1;
 
         Board board = new Board(width, height, bombs);
+
+        //To test the board get overwritten
+        overwriteBoard(width, height, board);
 
         // Manually place a bomb in the center (1, 1)
         board.getBlockObject(1, 1).setIsRevealed(true); // Simulate a revealed bomb
@@ -99,5 +101,16 @@ class BoardTest {
         assertEquals(1, board.getBlockObject(2, 0).getSurroundingBombs(), "Incorrect surrounding bombs for (2, 0)");
         assertEquals(1, board.getBlockObject(2, 1).getSurroundingBombs(), "Incorrect surrounding bombs for (2, 1)");
         assertEquals(1, board.getBlockObject(2, 2).getSurroundingBombs(), "Incorrect surrounding bombs for (2, 2)");
+    }
+
+    private void overwriteBoard(int width, int height, Board board) {
+        for (int x = 0; x < width; x++) {
+            List<Block> row = new ArrayList<>();
+            for (int y = 0; y < height; y++) {
+                row.add(new Blank(board, x, y));
+            }
+            board.getBlockList().set(x, row);
+        }
+        board.getBlockList().get(1).set(1, new Bomb(board, 1,1));
     }
 }

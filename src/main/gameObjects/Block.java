@@ -14,7 +14,7 @@ public abstract class Block {
     private int surroundingBombs;
     private String color;
 
-    private BlockType blockType;
+    private final BlockType blockType;
 
     public Block(Board board, int x, int y, BlockType blockType) {
         this.board = board;

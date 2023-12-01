@@ -108,7 +108,7 @@ public class Board {
         }
     }
 
-    public void placeBombs() { //Made public for the test
+    private void placeBombs() { //Made public for the test
         Random rand = new Random();
         Set<Block> bombSet = new HashSet<>();
 

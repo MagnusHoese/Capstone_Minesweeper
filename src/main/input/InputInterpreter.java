@@ -27,16 +27,19 @@ public class InputInterpreter {
     }
 
     private void handleInput(int x, int y, String status) {
+        x -= 1;
+        y -= 1;
 
         if (board.isWithinBounds(x, y)) {
 
             switch (status) {
+
                 case "r":
                     blockList.get(x).get(y).setIsRevealed(true);
                     break;
                 case "f":
                     if(!blockList.get(x).get(y).isBlankRevealed()) {
-                        blockList.get(x).get(y).setFlag(true);
+                        blockList.get(x).get(y).setFlag(!blockList.get(x).get(y).hasFlag());
                     } else {
                         System.out.println("Cell already revealed. Try Again!");
                         interpretInput(consoleInput.getInputString());

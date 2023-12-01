@@ -14,32 +14,34 @@ public class ConsoleInput {
     public String[] getInputString() {
 
         do {
-            System.out.print("Enter main.input (format: x,y,status(r=reveal/f=flag): ");
+            System.out.print("Enter input (format: x,y,status(r=reveal/f=flag): ");
             String inputString = scanner.nextLine().trim();
 
-            if (inputString.isEmpty()) {
-                System.out.println("Input cannot be empty. Try Again!");
-                continue;
-            }
-
-            String[] formatted = inputString.split(",");
-
-            if (formatted.length != 3) {
-                System.out.println("Invalid main.input format. Try Again!");
-                continue;
-            }
-
             try {
+                validateInput(inputString);
+
+                String[] formatted = inputString.split(",");
+
                 int xInput = Integer.parseInt(formatted[0]);
                 int yInput = Integer.parseInt(formatted[1]);
                 String statusInput = formatted[2];
-                return formatted; // Break the loop and return array if main.input is valid
+                return formatted; // Break the loop and return array if input is valid
 
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid numeric main.input. Try Again!");
+            }catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
             }
 
         } while (true);
+    }
+    private void validateInput(String input) throws IllegalArgumentException {
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException("Input cannot be empty. Try Again!");
+        }
+
+        String[] formatted = input.split(",");
+        if (formatted.length != 3) {
+            throw new IllegalArgumentException("Invalid input format. Try Again!");
+        }
     }
 }
 

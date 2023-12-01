@@ -1,21 +1,25 @@
 package main.gameStates;
 
 import main.gameLogic.GameController;
+import main.gameLogic.Timer;
 import main.renderers.BoardRenderer;
 
 import static main.enums.TextManipulation.*;
 
 public class EndState implements GameState{
 
+    private Timer timer;
     private BoardRenderer renderer;
     private boolean hasWon;
 
-    public EndState(BoardRenderer renderer, boolean hasWon) {
+    public EndState(Timer timer, BoardRenderer renderer, boolean hasWon) {
+        this.timer = timer;
         this.renderer = renderer;
         this.hasWon = hasWon;
     }
     @Override
     public void handle(GameController gameController) {
+        timer.stopTimer();
         if(hasWon) {
             System.out.println(GREEN_BACKGROUND.getAnsiCode() + "All flags planted correctly! Congrats!" + RESET.getAnsiCode());
             renderer.draw();

@@ -27,7 +27,7 @@ public class StartState implements GameState{
 
         inputInterpreter.interpretInput(input.getInputString());
 
-        gameController.setCurrentGameState(new RunningState(renderer, inputInterpreter));
+        gameController.setCurrentGameState(new RunningState(timer, renderer, inputInterpreter));
     }
 
 }

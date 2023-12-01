@@ -23,9 +23,13 @@ public class GameController {
 
     public GameController(Board board, BoardRenderer renderer, ConsoleInput input, Timer timer) {
         this.board = board;
-        this.blockList = board.getBlockList();
+        this.blockList = board.getBlockList();   
         this.inputInterpreter = new InputInterpreter(board, input, blockList);
         setCurrentGameState(new StartState(timer, renderer, inputInterpreter));
+    }
+
+    public GameState getCurrentGameState() {
+        return currentGameState;
     }
 
     public void setCurrentGameState(GameState state){

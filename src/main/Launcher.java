@@ -26,9 +26,6 @@ public class Launcher {
 
 
 /*
-        Is my state a design pattern. Could you argue that its also a observer pattern?
-        Should i make mvc?
-
 
         - On this line:
         "main.gameLogic.Blank current = (main.gameLogic.Blank)blockArray[i];
